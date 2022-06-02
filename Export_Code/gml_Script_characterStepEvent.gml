@@ -270,6 +270,7 @@ if global.spectator
                 global.absorbDone = 1
                 absorbTime = 0
                 global.playerhealth = -1
+                global.spectator = 0
                 if (global.playerhealth <= 0)
                 {
                     with (oControl)
