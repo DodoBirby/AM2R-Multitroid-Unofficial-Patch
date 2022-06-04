@@ -1,6 +1,6 @@
 if (global.playerhealth <= 0 && global.saxmode && global.sax && oCharacter.sprite_index != sCoreXSAX)
     global.playerhealth = 1
-if (global.playerhealth >= 0)
+if (global.playerhealth >= 0 && global.sax && global.saxmode)
     exit
 if (instance_exists(oClient) && oClient.connected)
 {
