@@ -1,0 +1,1 @@
+global.mapPlayerIconSync = (!global.mapPlayerIconSync)

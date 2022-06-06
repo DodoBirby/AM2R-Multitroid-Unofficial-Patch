@@ -1,0 +1,1 @@
+global.ammoSync = (!global.ammoSync)

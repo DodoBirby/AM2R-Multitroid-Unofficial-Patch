@@ -1,0 +1,1 @@
+global.itemToggleSync = (!global.itemToggleSync)

@@ -1,0 +1,1 @@
+global.lobbyLocked = 0

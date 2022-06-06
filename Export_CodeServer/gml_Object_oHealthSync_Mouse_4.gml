@@ -1,0 +1,1 @@
+global.healthSync = (!global.healthSync)

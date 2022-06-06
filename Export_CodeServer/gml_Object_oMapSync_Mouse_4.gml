@@ -1,0 +1,1 @@
+global.mapSync = (!global.mapSync)
