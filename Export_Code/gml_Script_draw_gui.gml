@@ -1,4 +1,4 @@
-var scaleMult, f, arrList, ID, _x, _y, xoffNew, lowestPosX, lowestPosY, enemyCount, i, arrData, xDiff, yDiff, sax, spectator;
+var scaleMult, f, arrList, ID, _x, _y, xoffNew, lowestPosX, lowestPosY, enemyCount, i, arrData, xDiff, yDiff, sax, spectator, playerState;
 if (global.classicmode == 0 && global.opshowhud)
 {
     xoff = 33
@@ -450,6 +450,12 @@ if (global.classicmode == 0 && global.opshowhud)
             yDiff = (oClient.posY - arrData[2])
             sax = arrData[3]
             spectator = arrData[5]
+            playerState = arrData[6]
+            if (playerState == 27)
+            {
+                xDiff *= 2
+                yDiff *= 2
+            }
             if ((abs(xDiff) < lowestPosX || abs(yDiff) < lowestPosY) && sax != global.sax && ID != global.clientID)
             {
                 if spectator
@@ -514,6 +520,8 @@ if (global.classicmode == 0 && global.opshowhud)
             }
         }
     }
+    if (oCharacter.state == 27)
+        global.scannerSprite = 1883
     if global.ophudshowmetrcount
     {
         if (global.saxmode && global.sax)
@@ -547,6 +555,7 @@ if (global.classicmode == 0 && global.opshowhud)
                 yDiff = (oClient.posY - arrData[2])
                 sax = arrData[3]
                 spectator = arrData[5]
+                playerState = arrData[6]
                 if global.spectator
                 {
                     if (!sax)
@@ -562,10 +571,13 @@ if (global.classicmode == 0 && global.opshowhud)
                     else if (abs(xDiff) <= 2 && abs(yDiff) <= 1)
                         draw_sprite_ext(sMultitroidMapIconMiepee, 0, (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
                 }
-                else if (abs(xDiff) <= 2 && abs(yDiff) <= 1)
+                else if (abs(xDiff) <= 2 && abs(yDiff) <= 1 && oCharacter.state != 27)
                 {
                     if ((!spectator) || sax)
-                        draw_sprite_ext(oControl.MultitroidMapIcon, (arrData[0] - 1), (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
+                    {
+                        if (playerState != 27)
+                            draw_sprite_ext(oControl.MultitroidMapIcon, (arrData[0] - 1), (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
+                    }
                 }
             }
         }
