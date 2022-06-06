@@ -6,3 +6,9 @@ if instance_exists(oServer)
 }
 else
     global.saxmode = 0
+if global.saxmode
+{
+    global.itemToggleSync = 0
+    global.healthSync = 0
+    global.ammoSync = 0
+}
