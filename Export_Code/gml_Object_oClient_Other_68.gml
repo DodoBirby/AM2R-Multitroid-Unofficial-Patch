@@ -380,7 +380,7 @@ switch type_event
                             }
                             if checkMissile
                                 otherOBJ = 440
-                            if (checkMissile && global.playerFreeze > 0 && global.playerFreeze <= 151 && (!global.frozenNormally))
+                            if (checkMissile && (!checkFreeze) && global.playerFreeze > 0 && global.playerFreeze <= 151 && (!global.frozenNormally))
                                 global.playerFreeze = 1
                             if global.frozenNormally
                                 show_debug_message("normal freeze")
@@ -388,7 +388,7 @@ switch type_event
                             {
                                 if (checkBeam && (!(global.currentsuit == 2 && global.item[5] == 1)) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
                                 {
-                                    global.playerFreeze = 156
+                                    global.playerFreeze = 120
                                     damageDir = 0
                                     knockbackY = 0
                                     global.frozenByRollback = 1
@@ -402,7 +402,7 @@ switch type_event
                                 }
                                 if (checkMissile && (checkDamage == 10 || checkDamage == 20) && (!(global.currentsuit == 2 && global.item[5] == 1)) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
                                 {
-                                    global.playerFreeze = 156
+                                    global.playerFreeze = 120
                                     damageDir = 0
                                     knockbackY = 0
                                     global.frozenByRollback = 1
