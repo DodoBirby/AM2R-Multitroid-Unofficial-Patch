@@ -1,6 +1,6 @@
 var size, type, alignment, bufferSize, result, playerState;
 if instance_exists(oCharacter)
-    playerState = oCharacter.state
+    playerState = oCharacter.sball
 else
     playerState = 0
 buffer_delete(buffer)

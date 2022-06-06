@@ -451,7 +451,7 @@ if (global.classicmode == 0 && global.opshowhud)
             sax = arrData[3]
             spectator = arrData[5]
             playerState = arrData[6]
-            if (playerState == 27)
+            if (playerState == 1)
             {
                 xDiff *= 2
                 yDiff *= 2
@@ -520,7 +520,7 @@ if (global.classicmode == 0 && global.opshowhud)
             }
         }
     }
-    if (oCharacter.state == 27)
+    if (oCharacter.sball == 1)
         global.scannerSprite = 1883
     if global.ophudshowmetrcount
     {
@@ -571,11 +571,11 @@ if (global.classicmode == 0 && global.opshowhud)
                     else if (abs(xDiff) <= 2 && abs(yDiff) <= 1)
                         draw_sprite_ext(sMultitroidMapIconMiepee, 0, (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
                 }
-                else if (abs(xDiff) <= 2 && abs(yDiff) <= 1 && oCharacter.state != 27)
+                else if (abs(xDiff) <= 2 && abs(yDiff) <= 1 && oCharacter.sball != 1)
                 {
                     if ((!spectator) || sax)
                     {
-                        if (playerState != 27)
+                        if (playerState != 1)
                             draw_sprite_ext(oControl.MultitroidMapIcon, (arrData[0] - 1), (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
                     }
                 }

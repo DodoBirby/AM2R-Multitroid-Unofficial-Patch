@@ -731,7 +731,7 @@ if (((!global.ingame) || (!global.opshowhud)) && global.saxmode)
         sax = arrData[3]
         spectator = arrData[5]
         playerState = arrData[6]
-        if (playerState == 27)
+        if (playerState == 1)
         {
             xDiff *= 2
             yDiff *= 2
