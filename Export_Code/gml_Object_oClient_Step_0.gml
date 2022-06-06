@@ -1,4 +1,4 @@
-var size, type, alignment, sax, bufferSize, result, i, arr, ID, findID, h, arrList, arrID, arrX, arrY, arrName, findHatchlingID, hatchling, lowestPosX, lowestPosY, enemyCount, arrData, xDiff, yDiff, spectator, playerInBossRoom, arrMapIcon, playerRoom;
+var size, type, alignment, sax, bufferSize, result, i, arr, ID, findID, h, arrList, arrID, arrX, arrY, arrName, findHatchlingID, hatchling, lowestPosX, lowestPosY, enemyCount, arrData, xDiff, yDiff, spectator, playerInBossRoom, arrMapIcon, playerRoom, playerState;
 if (!connected)
 {
     if (isConnected >= 0)
@@ -730,6 +730,12 @@ if (((!global.ingame) || (!global.opshowhud)) && global.saxmode)
         yDiff = (oClient.posY - arrData[2])
         sax = arrData[3]
         spectator = arrData[5]
+        playerState = arrData[6]
+        if (playerState == 27)
+        {
+            xDiff *= 2
+            yDiff *= 2
+        }
         if ((abs(xDiff) < lowestPosX || abs(yDiff) < lowestPosY) && sax != global.sax && ID != global.clientID)
         {
             if spectator

@@ -1,5 +1,10 @@
 if (global.saxmode && global.enemyNearby)
     exit
+if instance_exists(oCharacter)
+{
+    if (oCharacter.state == 27 && global.saxmode)
+        exit
+}
 if (global.ingame == 1 && global.enablecontrol == 1 && room != rm_transition && ((!keyboard_check(vk_alt)) || os_type == os_linux))
 {
     event_user(3)
