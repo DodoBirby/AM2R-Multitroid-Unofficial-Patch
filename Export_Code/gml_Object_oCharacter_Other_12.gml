@@ -18,8 +18,11 @@ if (invincible == 0)
             event_user(0)
         exit
     }
-    if (otherOBJ == 440 && global.playerFreeze > 0 && global.playerFreeze <= 151 && (!global.frozenByRollback) && (!other.icemissiles))
-        global.playerFreeze = 1
+    if (otherOBJ == 440 && global.playerFreeze > 0 && global.playerFreeze <= 151 && (!global.frozenByRollback))
+    {
+        if ((!other.icemissiles) || other.smissile)
+            global.playerFreeze = 1
+    }
     if global.frozenByRollback
         show_debug_message("rollback freeze")
     if (global.playerFreeze == 0 && (!global.frozenByRollback))

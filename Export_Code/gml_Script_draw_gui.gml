@@ -514,8 +514,6 @@ if (global.classicmode == 0 && global.opshowhud)
             }
         }
     }
-    if (oCharacter.sball == 1)
-        global.scannerSprite = 1883
     if global.ophudshowmetrcount
     {
         if (global.saxmode && global.sax)
@@ -565,7 +563,7 @@ if (global.classicmode == 0 && global.opshowhud)
                     else if (abs(xDiff) <= 2 && abs(yDiff) <= 1)
                         draw_sprite_ext(sMultitroidMapIconMiepee, 0, (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
                 }
-                else if (abs(xDiff) <= 2 && abs(yDiff) <= 1 && oCharacter.sball != 1)
+                else if (abs(xDiff) <= 2 && abs(yDiff) <= 1)
                 {
                     if ((!spectator) || sax)
                     {
