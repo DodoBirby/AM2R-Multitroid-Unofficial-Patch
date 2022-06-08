@@ -82,13 +82,13 @@ repeat beams
     beam.damage = 5
     beam.chargebeam = 0
     if wbeam
-        beam.damage *= 0.6
-    if ibeam
-        beam.damage *= 1
-    if sbeam
         beam.damage *= 1.5
+    if ibeam
+        beam.damage *= 1.5
+    if sbeam
+        beam.damage *= 0.8
     if pbeam
-        beam.damage *= 1
+        beam.damage *= 1.2
     if (argument3 >= 1)
     {
         beam.damage *= 3

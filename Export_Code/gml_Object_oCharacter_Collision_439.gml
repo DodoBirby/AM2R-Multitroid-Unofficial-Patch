@@ -1,7 +1,5 @@
 if (other.sax != global.sax && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
 {
-    if (global.playerFreeze > 0)
-        other.damage /= 2
     event_user(2)
     if (!global.spectator)
         global.showHealthIndicatorsTimer = 900
