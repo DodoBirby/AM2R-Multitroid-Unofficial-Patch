@@ -31,35 +31,35 @@ if instance_exists(oClient)
                         y = arrY
                     sax = arrSAX
                     spectator = arrDraw[26]
-                }
-                mask_index = sMask1
-                if (arrState == DUCKING)
-                    mask_index = sMask3
-                if (arrState == BALL || arrState == AIRBALL || arrState == SPIDERBALL || arrState == WATERJET)
-                    mask_index = sMask4
-                if (arrSJBall == 1 && (arrState == SUPERJUMP || arrState == SJSTART || arrState == SJEND || arrState == BRAKING))
-                    mask_index = sMask4
-                if (instance_exists(oCharacter) && distance_to_object(oCharacter) <= 500 && arrState == RUNNING && ((abs(arrImage) >= 4 && abs(arrImage) < 4.9) || (abs(arrImage) >= 9 && abs(arrImage) < 9.9)) && arrSAX)
-                    PlayFootstepSAX(get_floor_material())
-                if (arrSprite == 1915)
-                {
-                    if (place_meeting(x, y, oCharacter) && arrInvincible == 0 && (!global.spectator))
+                    mask_index = sMask1
+                    if (arrState == DUCKING)
+                        mask_index = sMask3
+                    if (arrState == BALL || arrState == AIRBALL || arrState == SPIDERBALL || arrState == WATERJET)
+                        mask_index = sMask4
+                    if (arrSJBall == 1 && (arrState == SUPERJUMP || arrState == SJSTART || arrState == SJEND || arrState == BRAKING))
+                        mask_index = sMask4
+                    if (instance_exists(oCharacter) && distance_to_object(oCharacter) <= 500 && arrState == RUNNING && ((abs(arrImage) >= 4 && abs(arrImage) < 4.9) || (abs(arrImage) >= 9 && abs(arrImage) < 9.9)) && arrSAX)
+                        PlayFootstepSAX(get_floor_material())
+                    if (arrSprite == 1915)
                     {
-                        if (!absorb)
+                        if (place_meeting(x, y, oCharacter) && arrInvincible == 0 && (!global.spectator))
                         {
-                            PlaySoundMono(sndAbsorbX)
-                            with (instance_create(oCharacter.x, (oCharacter.y - (oCharacter.sprite_height / 2)), oAbsorbX))
-                                core = 1
-                            relativeX = (x - oCharacter.x)
-                            relativeY = (y - (oCharacter.y - (oCharacter.sprite_height / 2)))
-                            screwattackpickupfx = oCharacter.fxtimer
-                            absorb = 1
-                            global.otherAbsorbID = myid
-                            global.otherAbsorbRelativeX = oCharacter.x
-                            global.otherAbsorbRelativeY = oCharacter.y
-                            global.otherAbsorbSpriteHeight = (oCharacter.sprite_height / 2)
-                            with (oClient)
-                                event_user(4)
+                            if (!absorb)
+                            {
+                                PlaySoundMono(sndAbsorbX)
+                                with (instance_create(oCharacter.x, (oCharacter.y - (oCharacter.sprite_height / 2)), oAbsorbX))
+                                    core = 1
+                                relativeX = (x - oCharacter.x)
+                                relativeY = (y - (oCharacter.y - (oCharacter.sprite_height / 2)))
+                                screwattackpickupfx = oCharacter.fxtimer
+                                absorb = 1
+                                global.otherAbsorbID = myid
+                                global.otherAbsorbRelativeX = oCharacter.x
+                                global.otherAbsorbRelativeY = oCharacter.y
+                                global.otherAbsorbSpriteHeight = (oCharacter.sprite_height / 2)
+                                with (oClient)
+                                    event_user(4)
+                            }
                         }
                     }
                 }
