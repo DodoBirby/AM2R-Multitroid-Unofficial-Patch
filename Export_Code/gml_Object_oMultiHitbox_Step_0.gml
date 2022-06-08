@@ -15,16 +15,16 @@ if instance_exists(oClient)
             {
                 arrDraw = ds_list_find_value(oClient.roomListData, i)
                 arrID = arrDraw[0]
-                arrX = arrDraw[1]
-                arrY = arrDraw[2]
-                arrSprite = arrDraw[3]
-                arrImage = arrDraw[4]
-                arrState = arrDraw[19]
-                arrSAX = arrDraw[20]
-                arrSJBall = arrDraw[22]
-                arrInvincible = arrDraw[27]
                 if (arrID == myid)
                 {
+                    arrX = arrDraw[1]
+                    arrY = arrDraw[2]
+                    arrSprite = arrDraw[3]
+                    arrImage = arrDraw[4]
+                    arrState = arrDraw[19]
+                    arrSAX = arrDraw[20]
+                    arrSJBall = arrDraw[22]
+                    arrInvincible = arrDraw[27]
                     if (!absorb)
                         x = arrX
                     if (!absorb)

@@ -18,14 +18,14 @@ if (myid != 0)
                 {
                     arrDraw = ds_list_find_value(oClient.roomListData, i)
                     arrID = arrDraw[0]
-                    arrX = arrDraw[1]
-                    arrY = arrDraw[2]
-                    arrSprite = arrDraw[3]
-                    mirror = arrDraw[12]
-                    arrRoom = arrDraw[14]
-                    arrState = arrDraw[19]
                     if (arrID == myid)
                     {
+                        arrX = arrDraw[1]
+                        arrY = arrDraw[2]
+                        arrSprite = arrDraw[3]
+                        mirror = arrDraw[12]
+                        arrRoom = arrDraw[14]
+                        arrState = arrDraw[19]
                         x = arrX
                         y = arrY
                         if (arrRoom != room)
