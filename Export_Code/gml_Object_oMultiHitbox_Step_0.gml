@@ -6,6 +6,11 @@ if instance_exists(oClient)
     {
         if (ds_list_size(oClient.roomListData) > 0)
         {
+            if (ds_list_find_index(oClient.roomList, myid) < 0)
+            {
+                ds_list_delete(global.hitboxList, findID)
+                instance_destroy()
+            }
             for (i = 0; i < ds_list_size(oClient.roomListData); i++)
             {
                 arrDraw = ds_list_find_value(oClient.roomListData, i)
