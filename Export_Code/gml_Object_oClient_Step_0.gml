@@ -1,4 +1,4 @@
-var size, type, alignment, sax, bufferSize, result, i, arr, ID, findID, h, arrList, arrID, arrX, arrY, arrName, findHatchlingID, hatchling, lowestPosX, lowestPosY, enemyCount, arrData, xDiff, yDiff, spectator, playerInBossRoom, arrMapIcon, playerRoom, playerState;
+var size, type, alignment, sax, bufferSize, result, i, arr, ID, findID, h, arrList, arrID, arrX, arrY, arrName, findHatchlingID, hatchling, lowestPosX, lowestPosY, enemyCount, arrData, xDiff, yDiff, spectator, playerInBossRoom, arrMapIcon, playerRoom, playerState, lowestDist, dist;
 if (!connected)
 {
     if (isConnected >= 0)
@@ -719,8 +719,7 @@ if (oControl.mod_monstersextremecheck != elm)
     oControl.mod_monstersextremecheck = elm
 if (((!global.ingame) || (!global.opshowhud)) && global.saxmode)
 {
-    lowestPosX = 1000
-    lowestPosY = 1000
+    lowestDist = 1000
     enemyCount = 0
     for (i = 0; i < ds_list_size(oClient.posData); i++)
     {
@@ -736,21 +735,16 @@ if (((!global.ingame) || (!global.opshowhud)) && global.saxmode)
             xDiff *= 2
             yDiff *= 2
         }
-        if ((abs(xDiff) < lowestPosX || abs(yDiff) < lowestPosY) && sax != global.sax && ID != global.clientID)
+        dist = max(abs(xDiff), abs(yDiff))
+        if (sax != global.sax && ID != global.clientID)
         {
             if spectator
             {
                 if sax
-                {
-                    lowestPosX = abs(xDiff)
-                    lowestPosY = abs(yDiff)
-                }
+                    lowestDist = min(lowestDist, dist)
             }
             else
-            {
-                lowestPosX = abs(xDiff)
-                lowestPosY = abs(yDiff)
-            }
+                lowestDist = min(lowestDist, dist)
         }
         if (sax != global.sax)
             enemyCount++
@@ -763,36 +757,36 @@ if (((!global.ingame) || (!global.opshowhud)) && global.saxmode)
     }
     if (enemyCount > 0)
     {
-        if (abs(lowestPosX) > 5 || abs(lowestPosY) > 5)
+        if (lowestDist > 5)
             global.inMusSAXRange = 0
-        if (abs(lowestPosX) <= 5 && abs(lowestPosY) <= 5)
+        if (lowestDist <= 5)
             global.inMusSAXRange = 1
-        if (abs(lowestPosX) > 4 || abs(lowestPosY) > 4)
+        if (lowestDist > 4)
         {
             global.enemyNearby = 0
             global.scannerSprite = 1883
         }
-        if (abs(lowestPosX) <= 4 && abs(lowestPosY) <= 4)
+        if (lowestDist <= 4)
         {
             global.enemyNearby = 0
             global.scannerSpeedMax = 5
             global.scannerSprite = 1882
         }
-        if (abs(lowestPosX) <= 3 && abs(lowestPosY) <= 3)
+        if (lowestDist <= 3)
             global.enemyNearby = 1
-        if (abs(lowestPosX) <= 2 && abs(lowestPosY) <= 2)
+        if (lowestDist <= 2)
         {
             global.enemyNearby = 1
             global.scannerSpeedMax = 4
             global.scannerSprite = 1881
         }
-        if (abs(lowestPosX) <= 1 && abs(lowestPosY) <= 1)
+        if (lowestDist <= 1)
         {
             global.enemyNearby = 1
             global.scannerSpeedMax = 3
             global.scannerSprite = 1880
         }
-        if (abs(lowestPosX) == 0 && abs(lowestPosY) == 0)
+        if (lowestDist == 0)
         {
             global.enemyNearby = 1
             global.scannerSpeedMax = 2
