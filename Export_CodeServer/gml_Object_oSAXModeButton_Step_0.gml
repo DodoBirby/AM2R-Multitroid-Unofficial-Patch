@@ -6,7 +6,7 @@ if instance_exists(oServer)
         match = 0
         for (i = 0; i < ds_list_size(oServer.idList); i++)
         {
-            if (!is_undefined(ds_list_find_value(oServer.idList, i)))
+            if (!(is_undefined(ds_list_find_value(oServer.idList, i))))
             {
                 arr = ds_list_find_value(oServer.idList, i)
                 arrID = arr[0, 0]
@@ -21,7 +21,7 @@ if instance_exists(oServer)
         instance_destroy()
     for (i = 0; i < ds_list_size(oServer.idList); i++)
     {
-        if (!is_undefined(ds_list_find_value(oServer.idList, i)))
+        if (!(is_undefined(ds_list_find_value(oServer.idList, i))))
         {
             arr = ds_list_find_value(oServer.idList, i)
             arrID = arr[0, 0]

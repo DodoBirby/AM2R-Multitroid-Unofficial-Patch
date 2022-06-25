@@ -5,7 +5,7 @@ randomize()
 strict_init("dictionary.json")
 canChange = 1
 type = buffer_fixed
-if (!file_exists((working_directory + "\settings.ini")))
+if (!(file_exists((working_directory + "\settings.ini"))))
 {
     ini_open((working_directory + "\settings.ini"))
     ini_write_real("Settings", "port", 64198)
@@ -18,7 +18,7 @@ port = ini_read_real("Settings", "port", 64198)
 maxClients = ini_read_real("Settings", "maxplayers", 16)
 password = ini_read_string("Settings", "moderatorpass", string(random_get_seed()))
 ini_close()
-if (!file_exists((working_directory + "\blacklist.txt")))
+if (!(file_exists((working_directory + "\blacklist.txt"))))
 {
     blacklist = file_text_open_write((working_directory + "\blacklist.txt"))
     file_text_close(blacklist)

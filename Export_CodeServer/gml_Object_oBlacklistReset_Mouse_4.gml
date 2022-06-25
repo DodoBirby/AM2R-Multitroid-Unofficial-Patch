@@ -2,7 +2,7 @@ if instance_exists(oServer)
 {
     with (oServer)
     {
-        if (!file_exists((working_directory + "\blacklist.txt")))
+        if (!(file_exists((working_directory + "\blacklist.txt"))))
         {
             blacklist = file_text_open_write((working_directory + "\blacklist.txt"))
             file_text_close(blacklist)
