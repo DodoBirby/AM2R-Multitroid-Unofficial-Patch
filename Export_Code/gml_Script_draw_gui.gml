@@ -1,4 +1,4 @@
-var scaleMult, f, arrList, ID, _x, _y, xoffNew, lowestPosX, lowestPosY, enemyCount, i, arrData, xDiff, yDiff, sax, spectator, playerState, lowestDist, dist;
+var scaleMult, f, arrList, ID, _x, _y, xoffNew, lowestPosX, lowestPosY, enemyCount, i, arrData, xDiff, yDiff, sax, spectator, playerState, lowestDist, dist, combatState;
 if (global.classicmode == 0 && global.opshowhud)
 {
     xoff = 33
@@ -548,6 +548,7 @@ if (global.classicmode == 0 && global.opshowhud)
                 sax = arrData[3]
                 spectator = arrData[5]
                 playerState = arrData[6]
+                combatState = arrData[7]
                 if global.spectator
                 {
                     if (!sax)
@@ -568,7 +569,10 @@ if (global.classicmode == 0 && global.opshowhud)
                     if ((!spectator) || sax)
                     {
                         if (playerState != 1)
-                            draw_sprite_ext(oControl.MultitroidMapIcon, (arrData[0] - 1), (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
+                        {
+                            if combatState
+                                draw_sprite_ext(oControl.MultitroidMapIcon, (arrData[0] - 1), (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
+                        }
                     }
                 }
             }
