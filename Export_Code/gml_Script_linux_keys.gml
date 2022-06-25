@@ -123,7 +123,7 @@ if (gamepad_is_supported() && (!global.compatibilitymode))
             walk_zone = 1
         if is_past_deadzone(xjoyx, xjoyy, 1)
         {
-            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-(global.opxjoydz / 200)))
+            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-((global.opxjoydz / 200))))
             {
                 ctrl_Left = (-xjoyx)
                 global.controltype = 2
@@ -133,7 +133,7 @@ if (gamepad_is_supported() && (!global.compatibilitymode))
                 ctrl_Right = xjoyx
                 global.controltype = 2
             }
-            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-(global.opxjoydz / 200)))
+            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-((global.opxjoydz / 200))))
             {
                 ctrl_Up = 1
                 global.controltype = 2
@@ -240,7 +240,7 @@ if gamepad_is_supported()
         {
             if is_walkzone(xjoyx, xjoyy, 0)
                 walk_zone = 1
-            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-(global.opxjoydz / 200)))
+            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-((global.opxjoydz / 200))))
             {
                 ctrl_Left = (-xjoyx)
                 global.controltype = 1
@@ -250,7 +250,7 @@ if gamepad_is_supported()
                 ctrl_Right = xjoyx
                 global.controltype = 1
             }
-            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-(global.opxjoydz / 200)))
+            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-((global.opxjoydz / 200))))
             {
                 ctrl_Up = 1
                 global.controltype = 1

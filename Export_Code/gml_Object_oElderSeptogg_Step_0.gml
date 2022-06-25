@@ -14,7 +14,7 @@ else
 }
 if (place_meeting(x, (y - 1), oCharacter) && oCharacter.state != oCharacter.JUMPING)
 {
-    if (!place_meeting(x, (y + 1), oSolid))
+    if (!(place_meeting(x, (y + 1), oSolid)))
     {
         if (lift <= 0)
         {
@@ -48,7 +48,7 @@ else
 {
     if (y > ystart)
     {
-        yVel = (-min((abs((y - ystart)) / 15), max_up_speed))
+        yVel = (-(min((abs((y - ystart)) / 15), max_up_speed)))
         timer = 0
         grounded = 0
     }

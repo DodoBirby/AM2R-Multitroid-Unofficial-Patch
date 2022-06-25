@@ -21,10 +21,10 @@ if (frozen == 0)
             {
                 if (facing == 1)
                 {
-                    if (!collision_line((x - 8), (y + 12), (x + 8), (y + 12), oSolid, true, true))
+                    if (!(collision_line((x - 8), (y + 12), (x + 8), (y + 12), oSolid, true, true)))
                         direction = 270
                 }
-                else if (!collision_line((x - 8), (y - 12), (x + 8), (y - 12), oSolid, true, true))
+                else if (!(collision_line((x - 8), (y - 12), (x + 8), (y - 12), oSolid, true, true)))
                     direction = 90
             }
         }
@@ -43,10 +43,10 @@ if (frozen == 0)
             {
                 if (facing == 1)
                 {
-                    if (!collision_line((x + 12), (y - 8), (x + 12), (y + 8), oSolid, true, true))
+                    if (!(collision_line((x + 12), (y - 8), (x + 12), (y + 8), oSolid, true, true)))
                         direction = 0
                 }
-                else if (!collision_line((x - 12), (y - 8), (x - 12), (y + 8), oSolid, true, true))
+                else if (!(collision_line((x - 12), (y - 8), (x - 12), (y + 8), oSolid, true, true)))
                     direction = 180
             }
         }
@@ -65,10 +65,10 @@ if (frozen == 0)
             {
                 if (facing == 1)
                 {
-                    if (!collision_line((x - 8), (y - 12), (x + 8), (y - 12), oSolid, true, true))
+                    if (!(collision_line((x - 8), (y - 12), (x + 8), (y - 12), oSolid, true, true)))
                         direction = 90
                 }
-                else if (!collision_line((x - 8), (y + 12), (x + 8), (y + 12), oSolid, true, true))
+                else if (!(collision_line((x - 8), (y + 12), (x + 8), (y + 12), oSolid, true, true)))
                     direction = 270
             }
         }
@@ -87,14 +87,14 @@ if (frozen == 0)
             {
                 if (facing == 1)
                 {
-                    if (!collision_line((x - 12), (y - 8), (x - 12), (y + 8), oSolid, true, true))
+                    if (!(collision_line((x - 12), (y - 8), (x - 12), (y + 8), oSolid, true, true)))
                         direction = 180
                 }
-                else if (!collision_line((x + 12), (y - 8), (x + 12), (y + 8), oSolid, true, true))
+                else if (!(collision_line((x + 12), (y - 8), (x + 12), (y + 8), oSolid, true, true)))
                     direction = 0
             }
         }
-        if (turnedges && (!collision_rectangle((x - 12), (y - 12), (x + 12), (y + 12), oSolid, 1, 1)))
+        if (turnedges && (!(collision_rectangle((x - 12), (y - 12), (x + 12), (y + 12), oSolid, 1, 1))))
             turnedges = 0
         if (facing != 1)
             image_xscale = -1

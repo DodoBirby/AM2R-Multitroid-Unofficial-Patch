@@ -1,4 +1,4 @@
-if (!(oCharacter.state == oCharacter.GRABBEDQUEENBELLY && instance_exists(oPBomb)))
+if (!((oCharacter.state == oCharacter.GRABBEDQUEENBELLY && instance_exists(oPBomb))))
     myhealth -= dmg
 flashing = flashtime
 if (myhealth <= 0 && state != 100 && state != 50)

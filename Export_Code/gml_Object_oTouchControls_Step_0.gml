@@ -103,7 +103,7 @@ else if device_mouse_check_button(jump_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(jump_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(jump_pressed[0]))
-    if (!point_in_rectangle(tx, ty, btn_jump[0], btn_jump[1], btn_jump[2], btn_jump[3]))
+    if (!(point_in_rectangle(tx, ty, btn_jump[0], btn_jump[1], btn_jump[2], btn_jump[3])))
         jump_pressed[0] = -1
 }
 else
@@ -147,7 +147,7 @@ else if device_mouse_check_button(fire_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(fire_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(fire_pressed[0]))
-    if (!point_in_rectangle(tx, ty, btn_fire[0], btn_fire[1], btn_fire[2], btn_fire[3]))
+    if (!(point_in_rectangle(tx, ty, btn_fire[0], btn_fire[1], btn_fire[2], btn_fire[3])))
         fire_pressed[0] = -1
 }
 else
@@ -191,7 +191,7 @@ else if device_mouse_check_button(missile_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(missile_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(missile_pressed[0]))
-    if (!point_in_rectangle(tx, ty, btn_missile[0], btn_missile[1], btn_missile[2], btn_missile[3]))
+    if (!(point_in_rectangle(tx, ty, btn_missile[0], btn_missile[1], btn_missile[2], btn_missile[3])))
         missile_pressed[0] = -1
 }
 else
@@ -235,7 +235,7 @@ else if device_mouse_check_button(morph_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(morph_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(morph_pressed[0]))
-    if (!point_in_rectangle(tx, ty, btn_morph[0], btn_morph[1], btn_morph[2], btn_morph[3]))
+    if (!(point_in_rectangle(tx, ty, btn_morph[0], btn_morph[1], btn_morph[2], btn_morph[3])))
         morph_pressed[0] = -1
 }
 else
@@ -279,7 +279,7 @@ else if device_mouse_check_button(pause_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(pause_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(pause_pressed[0]))
-    if (!point_in_rectangle(tx, ty, btn_pause[0], btn_pause[1], btn_pause[2], btn_pause[3]))
+    if (!(point_in_rectangle(tx, ty, btn_pause[0], btn_pause[1], btn_pause[2], btn_pause[3])))
         pause_pressed[0] = -1
 }
 else
@@ -319,7 +319,7 @@ if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pre
         }
     }
 }
-if ((!device_mouse_check_button(aimupleft_pressed[0], mb_left)) || st_pressed[0] != -1)
+if ((!(device_mouse_check_button(aimupleft_pressed[0], mb_left))) || st_pressed[0] != -1)
     aimupleft_pressed[0] = -1
 if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pressed[0] == -1 && aimdownright_pressed[0] == -1 && st_pressed[0] == -1)
 {
@@ -356,7 +356,7 @@ if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pre
         }
     }
 }
-if ((!device_mouse_check_button(aimdownleft_pressed[0], mb_left)) || st_pressed[0] != -1)
+if ((!(device_mouse_check_button(aimdownleft_pressed[0], mb_left))) || st_pressed[0] != -1)
     aimdownleft_pressed[0] = -1
 if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pressed[0] == -1 && aimdownright_pressed[0] == -1 && st_pressed[0] == -1)
 {
@@ -393,7 +393,7 @@ if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pre
         }
     }
 }
-if ((!device_mouse_check_button(aimupright_pressed[0], mb_left)) || st_pressed[0] != -1)
+if ((!(device_mouse_check_button(aimupright_pressed[0], mb_left))) || st_pressed[0] != -1)
     aimupright_pressed[0] = -1
 if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pressed[0] == -1 && aimdownright_pressed[0] == -1 && st_pressed[0] == -1)
 {
@@ -430,7 +430,7 @@ if (aimupleft_pressed[0] == -1 && aimdownleft_pressed[0] == -1 && aimupright_pre
         }
     }
 }
-if ((!device_mouse_check_button(aimdownright_pressed[0], mb_left)) || st_pressed[0] != -1)
+if ((!(device_mouse_check_button(aimdownright_pressed[0], mb_left))) || st_pressed[0] != -1)
     aimdownright_pressed[0] = -1
 if (up_pressed[0] == -1)
 {
@@ -471,7 +471,7 @@ else if device_mouse_check_button(up_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(up_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(up_pressed[0]))
-    if (!point_in_triangle(tx, ty, btn_aimu[0], btn_aimu[1], btn_aimu[2], btn_aimu[3], btn_aimu[4], btn_aimu[5]))
+    if (!(point_in_triangle(tx, ty, btn_aimu[0], btn_aimu[1], btn_aimu[2], btn_aimu[3], btn_aimu[4], btn_aimu[5])))
         up_pressed[0] = -1
 }
 else
@@ -515,7 +515,7 @@ else if device_mouse_check_button(down_pressed[0], mb_left)
 {
     tx = scr_mouse_gui_x(device_mouse_raw_x(down_pressed[0]))
     ty = scr_mouse_gui_y(device_mouse_raw_y(down_pressed[0]))
-    if (!point_in_triangle(tx, ty, btn_aimd[0], btn_aimd[1], btn_aimd[2], btn_aimd[3], btn_aimd[4], btn_aimd[5]))
+    if (!(point_in_triangle(tx, ty, btn_aimd[0], btn_aimd[1], btn_aimd[2], btn_aimd[3], btn_aimd[4], btn_aimd[5])))
         down_pressed[0] = -1
 }
 else
@@ -561,7 +561,7 @@ if (!global.ingame)
     {
         tx = scr_mouse_gui_x(device_mouse_raw_x(right_pressed[0]))
         ty = scr_mouse_gui_y(device_mouse_raw_y(right_pressed[0]))
-        if (!point_in_triangle(tx, ty, btn_aimr[0], btn_aimr[1], btn_aimr[2], btn_aimr[3], btn_aimr[4], btn_aimr[5]))
+        if (!(point_in_triangle(tx, ty, btn_aimr[0], btn_aimr[1], btn_aimr[2], btn_aimr[3], btn_aimr[4], btn_aimr[5])))
             right_pressed[0] = -1
     }
     else
@@ -605,7 +605,7 @@ if (!global.ingame)
     {
         tx = scr_mouse_gui_x(device_mouse_raw_x(left_pressed[0]))
         ty = scr_mouse_gui_y(device_mouse_raw_y(left_pressed[0]))
-        if (!point_in_triangle(tx, ty, btn_aiml[0], btn_aiml[1], btn_aiml[2], btn_aiml[3], btn_aiml[4], btn_aiml[5]))
+        if (!(point_in_triangle(tx, ty, btn_aiml[0], btn_aiml[1], btn_aiml[2], btn_aiml[3], btn_aiml[4], btn_aiml[5])))
             left_pressed[0] = -1
     }
     else
@@ -659,7 +659,7 @@ if (global.gamestarted == 0 || room == gameintroroom || room == rm_credits)
     {
         tx = scr_mouse_gui_x(device_mouse_raw_x(pause_pressed[0]))
         ty = scr_mouse_gui_y(device_mouse_raw_y(pause_pressed[0]))
-        if (!point_in_rectangle(tx, ty, 0, 0, display_get_width(), display_get_width()))
+        if (!(point_in_rectangle(tx, ty, 0, 0, display_get_width(), display_get_width())))
             pause_pressed[0] = -1
     }
     else

@@ -389,7 +389,7 @@ switch type_event
                                 show_debug_message("normal freeze")
                             if (checkFreeze && global.playerFreeze == 0 && (!global.frozenNormally))
                             {
-                                if (checkBeam && (!(global.currentsuit == 2 && global.item[5] == 1)) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
+                                if (checkBeam && (!((global.currentsuit == 2 && global.item[5] == 1))) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
                                 {
                                     global.playerFreeze = 120
                                     damageDir = 0
@@ -403,7 +403,7 @@ switch type_event
                                         kDown = 0
                                     }
                                 }
-                                if (checkMissile && (checkDamage == 10 || checkDamage == 20) && (!(global.currentsuit == 2 && global.item[5] == 1)) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
+                                if (checkMissile && (checkDamage == 10 || checkDamage == 20) && (!((global.currentsuit == 2 && global.item[5] == 1))) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
                                 {
                                     global.playerFreeze = 120
                                     damageDir = 0

@@ -247,7 +247,7 @@ if global.spectator
         }
         if (absorbTime > 2 && global.beingAbsorbed)
         {
-            if ((!global.absorbDone) && (!approximatelyZero(abs((x - targetAbsorbX)))) && (!approximatelyZero(abs((y - targetAbsorbY)))))
+            if ((!global.absorbDone) && (!(approximatelyZero(abs((x - targetAbsorbX))))) && (!(approximatelyZero(abs((y - targetAbsorbY))))))
             {
                 x = round(lerp(x, targetAbsorbX, 0.1))
                 y = round(lerp(y, (targetAbsorbY - relativeSpriteHeight), 0.1))
@@ -2319,7 +2319,7 @@ if (state == GRIP && facing == RIGHT)
         canclimb += 1
     else
         canclimb = 0
-    if (((kJump && kJumpPushedSteps == 1 && kRight > 0) || (kUp && canclimb > 30 && statetime > 30)) && ((!position_meeting((x + 7), (y - 46), oSolid)) || (position_meeting((x + 7), (y - 46), oSolid) && global.morphball)))
+    if (((kJump && kJumpPushedSteps == 1 && kRight > 0) || (kUp && canclimb > 30 && statetime > 30)) && ((!(position_meeting((x + 7), (y - 46), oSolid))) || (position_meeting((x + 7), (y - 46), oSolid) && global.morphball)))
     {
         state = CLIMBING
         statetime = 0
@@ -2327,7 +2327,7 @@ if (state == GRIP && facing == RIGHT)
         image_index = 0
         sfx_play(sndPullUp)
     }
-    if (!position_meeting((x + 7), (y - 26), oSolid))
+    if (!(position_meeting((x + 7), (y - 26), oSolid)))
     {
         state = JUMPING
         statetime = 0
@@ -2370,7 +2370,7 @@ if (state == GRIP && facing == LEFT)
         canclimb += 1
     else
         canclimb = 0
-    if (((kJump && kJumpPushedSteps == 1 && kLeft > 0) || (kUp && canclimb > 30 && statetime > 30)) && ((!position_meeting((x - 8), (y - 46), oSolid)) || (position_meeting((x - 8), (y - 46), oSolid) && global.morphball)))
+    if (((kJump && kJumpPushedSteps == 1 && kLeft > 0) || (kUp && canclimb > 30 && statetime > 30)) && ((!(position_meeting((x - 8), (y - 46), oSolid))) || (position_meeting((x - 8), (y - 46), oSolid) && global.morphball)))
     {
         state = CLIMBING
         statetime = 0
@@ -2378,7 +2378,7 @@ if (state == GRIP && facing == LEFT)
         image_index = 0
         sfx_play(sndPullUp)
     }
-    if (!position_meeting((x - 8), (y - 26), oSolid))
+    if (!(position_meeting((x - 8), (y - 26), oSolid)))
     {
         state = JUMPING
         statetime = 0

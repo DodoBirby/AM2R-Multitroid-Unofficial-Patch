@@ -4,7 +4,7 @@ i = -1
 do
 {
     i += 1
-} until ((!file_exists((((working_directory + "/vidframes/frame 0") + string(i)) + ".png"))) && (!file_exists((((working_directory + "/vidframes/frame 00") + string(i)) + ".png"))) && (!file_exists((((working_directory + "/vidframes/frame 000") + string(i)) + ".png"))));
+} until ((!(file_exists((((working_directory + "/vidframes/frame 0") + string(i)) + ".png")))) && (!(file_exists((((working_directory + "/vidframes/frame 00") + string(i)) + ".png")))) && (!(file_exists((((working_directory + "/vidframes/frame 000") + string(i)) + ".png")))));
 sname = ("vidframes/frame " + string(i))
 if (i < 1000)
     sname = ("vidframes/frame 0" + string(i))

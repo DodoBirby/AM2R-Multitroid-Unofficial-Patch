@@ -126,7 +126,7 @@ if (instance_exists(oTouchControls) && (global.joydetected == 0 || global.ingame
     {
         if is_walkzone(xjoyx, xjoyy, 2)
             walk_zone = 1
-        if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-(global.opxjoydz / 100)) && oTouchControls.up_pressed[0] == -1 && oTouchControls.down_pressed[0] == -1)
+        if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-((global.opxjoydz / 100))) && oTouchControls.up_pressed[0] == -1 && oTouchControls.down_pressed[0] == -1)
         {
             ctrl_Left = (-xjoyx)
             global.controltype = 2
@@ -136,7 +136,7 @@ if (instance_exists(oTouchControls) && (global.joydetected == 0 || global.ingame
             ctrl_Right = xjoyx
             global.controltype = 2
         }
-        if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-(global.opxjoydz / 100)) && oTouchControls.left_pressed[0] == -1 && oTouchControls.right_pressed[0] == -1)
+        if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-((global.opxjoydz / 100))) && oTouchControls.left_pressed[0] == -1 && oTouchControls.right_pressed[0] == -1)
         {
             ctrl_Up = 1
             global.controltype = 2
@@ -158,7 +158,7 @@ if gamepad_is_supported()
         {
             if is_walkzone(xjoyx, xjoyy, 2)
                 walk_zone = 1
-            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-(global.opxjoydz / 200)))
+            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-((global.opxjoydz / 200))))
             {
                 ctrl_Left = (-xjoyx)
                 global.controltype = 2
@@ -168,7 +168,7 @@ if gamepad_is_supported()
                 ctrl_Right = xjoyx
                 global.controltype = 2
             }
-            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-(global.opxjoydz / 200)))
+            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-((global.opxjoydz / 200))))
             {
                 ctrl_Up = 1
                 global.controltype = 2
@@ -296,7 +296,7 @@ if gamepad_is_supported()
         {
             if is_walkzone(xjoyx, xjoyy, 0)
                 walk_zone = 1
-            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-(global.opxjoydz / 200)))
+            if (ctrl_Left == 0 && ctrl_Right == 0 && xjoyx < (-((global.opxjoydz / 200))))
             {
                 ctrl_Left = (-xjoyx)
                 global.controltype = 1
@@ -306,7 +306,7 @@ if gamepad_is_supported()
                 ctrl_Right = xjoyx
                 global.controltype = 1
             }
-            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-(global.opxjoydz / 200)))
+            if (ctrl_Up == 0 && ctrl_Down == 0 && xjoyy < (-((global.opxjoydz / 200))))
             {
                 ctrl_Up = 1
                 global.controltype = 1
