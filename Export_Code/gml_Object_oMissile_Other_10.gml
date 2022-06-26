@@ -1,6 +1,7 @@
 expl = instance_create(round(x), round(y), oMissileExpl)
 expl.sax = sax
 expl.myid = myid
+expl.icemissiles = icemissiles
 if (smissile == 0)
 {
     expl.image_xscale = 0.6

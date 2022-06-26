@@ -386,6 +386,8 @@ switch type_event
                             }
                             if checkMissile
                                 otherOBJ = 440
+                            if (checkMissile && checkDamage == 100)
+                                global.hitBySuper = 1
                             if (checkMissile && global.playerFreeze > 0 && global.playerFreeze <= 151 && (!global.frozenNormally))
                             {
                                 if ((!checkFreeze) || checkDamage == 100)

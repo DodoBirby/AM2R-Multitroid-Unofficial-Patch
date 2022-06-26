@@ -1,6 +1,10 @@
 var damage_taken, currState, experimentalExtraSAXDamageMultiplier;
 if global.spectator
     exit
+if (global.lavastate <= 7)
+    global.damageMult = 1
+if (global.lavastate > 7)
+    global.damageMult = 3
 experimentalExtraSAXDamageMultiplier = 1
 if global.experimental
     experimentalExtraSAXDamageMultiplier = 1.25
@@ -85,6 +89,13 @@ if (global.playerhealth > 0)
                 sfx_play(sndHurt)
                 ctrl_vibrate(0.5, 0.5, 10)
                 invincible = 60
+                if global.hitBySuper
+                {
+                    if (global.currentsuit == 1)
+                        invincible = 90
+                    if (global.currentsuit == 2 && global.item[5] == 1)
+                        invincible = 90
+                }
                 if (global.playerFreeze > 0)
                 {
                     invincible = 45
@@ -147,3 +158,4 @@ with (oCharacter)
 }
 global.multiDamageCollision = 0
 global.ignoreKnockback = 0
+global.hitBySuper = 0

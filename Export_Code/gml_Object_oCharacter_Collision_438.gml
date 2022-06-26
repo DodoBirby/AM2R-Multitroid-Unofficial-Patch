@@ -2,6 +2,8 @@ if (other.sax != global.sax && global.playerFreeze == 0 && invincible == 0 && ca
 {
     if other.smissile
         other.damage = 50
+    else
+        other.damage = 20
     event_user(2)
     if (!global.spectator)
         global.showHealthIndicatorsTimer = 900
