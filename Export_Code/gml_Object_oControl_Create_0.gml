@@ -464,5 +464,6 @@ global.damageMult = 0
 global.warpPipeCooldown = 0
 global.experimental = 0
 global.saveStationCooldown = 0
+global.hitBySuper = 0
 reset_map()
 load_character_vars()

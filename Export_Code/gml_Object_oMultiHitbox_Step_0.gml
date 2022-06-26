@@ -57,6 +57,18 @@ if instance_exists(oClient)
                                 global.otherAbsorbRelativeX = oCharacter.x
                                 global.otherAbsorbRelativeY = oCharacter.y
                                 global.otherAbsorbSpriteHeight = (oCharacter.sprite_height / 2)
+                                global.playerhealth += 700
+                                if (global.playerhealth > global.maxhealth)
+                                    global.playerhealth = global.maxhealth
+                                global.missiles += 75
+                                if (global.missiles > global.maxmissiles)
+                                    global.missiles = global.maxmissiles
+                                global.smissiles += 10
+                                if (global.smissiles > global.maxsmissiles)
+                                    global.smissiles = global.maxsmissiles
+                                global.pbombs += 5
+                                if (global.pbombs > global.maxpbombs)
+                                    global.pbombs = global.maxpbombs
                                 with (oClient)
                                     event_user(4)
                             }
