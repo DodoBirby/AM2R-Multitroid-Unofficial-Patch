@@ -54,7 +54,7 @@ if (state == SPIDERBALL || (state == AIRBALL && sball == 1))
         if global.ibeam
         {
             omegaSpider = 1
-            draw_sprite_ext(sSpiderballFX_fusion, -1, x, y, 1, 1, 0, -1, (0.2 + (fxtimer * 0.1)))
+            draw_sprite_ext(sSpiderballFXOmega_fusion, -1, x, y, 1, 1, 0, -1, (0.2 + (fxtimer * 0.1)))
         }
         if (!omegaSpider)
         {

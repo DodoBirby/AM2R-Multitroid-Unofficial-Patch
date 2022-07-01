@@ -5,7 +5,9 @@ if (!oControl.useselfpalette)
     {
         if oControl.mod_fusion
         {
-            if (global.currentsuit == 0)
+            if global.ibeam
+                pal_swap_set(sPalFusion3, 1, 0)
+            else if (global.currentsuit == 0)
                 pal_swap_set(sPalFusion0, 1, 0)
             else if (global.currentsuit == 1)
                 pal_swap_set(sPalFusion1, 1, 0)
