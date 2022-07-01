@@ -1,8 +1,10 @@
 var damage_taken, currState, experimentalExtraSAXDamageMultiplier;
 if global.spectator
     exit
-if (global.lavastate <= 7)
-    global.damageMult = 1
+if (global.lavastate <= 7 && global.sax)
+    global.damageMult = 1.5
+else
+    global.damageMult = 3
 if (global.lavastate > 7)
     global.damageMult = 3
 experimentalExtraSAXDamageMultiplier = 1

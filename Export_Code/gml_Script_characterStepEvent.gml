@@ -1965,6 +1965,7 @@ if (state == WATERJET)
         xAcc = 0
         yVel = 0
         yAcc = 0
+        canbehit = 0
     }
     if (statetime == 120)
     {
@@ -1987,6 +1988,7 @@ if (state == WATERJET)
     {
         state = AIRBALL
         statetime = 0
+        canbehit = 1
     }
 }
 if (state == SPIDERBALL && statetime > 1)
@@ -2647,6 +2649,7 @@ if (state == GRABBEDQUEEN)
         x = round(x)
         y = round(y)
         aimlock = 0
+        canbehit = 1
     }
 }
 if (state == GRABBEDQUEENMORPH)
@@ -2667,6 +2670,7 @@ if (state == GRABBEDQUEENMORPH)
         statetime = 0
         x = round(x)
         y = round(y)
+        canbehit = 1
     }
 }
 if (state == GRABBEDQUEENBELLY)
@@ -2692,6 +2696,7 @@ if (state == GRABBEDQUEENBELLY)
             x = round(x)
             y = round(y)
             queen_drain = 0
+            canbehit = 1
         }
     }
     if (!instance_exists(oQueen))
