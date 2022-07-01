@@ -1,4 +1,4 @@
-var sockets, size, type, alignment, bufferSize, i, getGravity;
+var sockets, size, type, alignment, bufferSize, i, getGravity, freezeOff;
 sockets = ds_list_size(playerList)
 buffer_delete(buffer)
 size = 1024
@@ -31,8 +31,11 @@ buffer_write(buffer, buffer_u8, syncedELM)
 for (i = 0; i < sockets; i++)
     network_send_packet(ds_list_find_value(playerList, i), buffer, buffer_tell(buffer))
 getGravity = 0
-if (global.itemSamus[5] && global.itemSamus[9])
+freezeOff = 0
+if global.itemSamus[9]
     getGravity = 1
+if global.itemSamus[5]
+    freezeOff = 1
 buffer_delete(buffer)
 size = 1024
 type = buffer_grow
@@ -41,11 +44,13 @@ buffer = buffer_create(size, type, alignment)
 buffer_seek(buffer, buffer_seek_start, 0)
 buffer_write(buffer, buffer_u8, 115)
 buffer_write(buffer, buffer_u8, getGravity)
+buffer_write(buffer, buffer_u8, freezeOff)
 bufferSize = buffer_tell(buffer)
 buffer_seek(buffer, buffer_seek_start, 0)
 buffer_write(buffer, buffer_s32, bufferSize)
 buffer_write(buffer, buffer_u8, 115)
 buffer_write(buffer, buffer_u8, getGravity)
+buffer_write(buffer, buffer_u8, freezeOff)
 for (i = 0; i < sockets; i++)
     network_send_packet(ds_list_find_value(playerList, i), buffer, buffer_tell(buffer))
 buffer_delete(buffer)

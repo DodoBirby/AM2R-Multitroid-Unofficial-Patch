@@ -32,7 +32,7 @@ if (invincible == 0)
         show_debug_message("rollback freeze")
     if (global.playerFreeze == 0 && (!global.frozenByRollback))
     {
-        if (otherOBJ == 439 && other.ibeam && (!((global.currentsuit == 2 && global.item[5] == 1))) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
+        if (otherOBJ == 439 && other.ibeam && (!global.freezeDisabled) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
         {
             global.playerFreeze = 120
             damageDir = 0
@@ -46,7 +46,7 @@ if (invincible == 0)
                 kDown = 0
             }
         }
-        if ((otherOBJ == 440 || otherOBJ == 438) && other.icemissiles && (!other.smissile) && (!((global.currentsuit == 2 && global.item[5] == 1))) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
+        if ((otherOBJ == 440 || otherOBJ == 438) && other.icemissiles && (!other.smissile) && (!global.freezeDisabled) && global.playerFreeze == 0 && invincible == 0 && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
         {
             global.playerFreeze = 120
             damageDir = 0
