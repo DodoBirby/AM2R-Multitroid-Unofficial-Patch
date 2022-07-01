@@ -1965,7 +1965,6 @@ if (state == WATERJET)
         xAcc = 0
         yVel = 0
         yAcc = 0
-        canbehit = 0
     }
     if (statetime == 120)
     {
@@ -1988,7 +1987,6 @@ if (state == WATERJET)
     {
         state = AIRBALL
         statetime = 0
-        canbehit = 1
     }
 }
 if (state == SPIDERBALL && statetime > 1)
