@@ -431,10 +431,10 @@ if (global.classicmode == 0 && global.opshowhud)
         draw_set_halign(fa_right)
         draw_set_alpha(0.39215686274509803)
         draw_set_color(c_black)
-        xoffNew = (xoff - 25)
-        draw_rectangle((xoffNew + oControl.widescreen_space), 0, ((xoff - 1) + oControl.widescreen_space), 26, false)
+        xoffNew = (xoff - 45)
+        draw_rectangle((xoffNew + oControl.widescreen_space), 0, ((xoff - 1) + oControl.widescreen_space), 31, false)
         draw_set_alpha(0.7843137254901961)
-        draw_rectangle(((xoffNew + 3) + oControl.widescreen_space), 3, ((xoff - 2) + oControl.widescreen_space), 23, false)
+        draw_rectangle(((xoffNew + 3) + oControl.widescreen_space), 3, ((xoff - 3) + oControl.widescreen_space), 28, false)
         draw_set_alpha(1)
         draw_set_color(c_white)
         draw_set_halign(fa_left)
@@ -516,23 +516,20 @@ if (global.classicmode == 0 && global.opshowhud)
     }
     if global.ophudshowmetrcount
     {
-        if (global.saxmode && global.sax)
+        if global.saxmode
         {
-            draw_background(bgSamCount, ((xoff + 4) + widescreen_space), 4)
-            draw_text(((xoff + 6) + widescreen_space), 21, to_string_lz(global.samCount))
+            draw_background(bgSamCount, ((xoff - 20) + widescreen_space), 4)
+            draw_text(((xoff - 18) + widescreen_space), 21, to_string_lz(global.samCount))
         }
-        else
+        if (global.ophudshowmetrcount == 1)
         {
-            if (global.ophudshowmetrcount == 1)
-            {
-                draw_background(bgGUIMetCountBG1, ((xoff + 4) + widescreen_space), 4)
-                draw_text(((xoff + 6) + widescreen_space), 21, to_string_lz(global.monstersarea))
-            }
-            if (global.ophudshowmetrcount == 2)
-            {
-                draw_background(bgGUIMetCountBG2, ((xoff + 4) + widescreen_space), 4)
-                draw_text(((xoff + 6) + widescreen_space), 21, to_string_lz(global.monstersleft))
-            }
+            draw_background(bgGUIMetCountBG1, ((xoff + 4) + widescreen_space), 4)
+            draw_text(((xoff + 6) + widescreen_space), 21, to_string_lz(global.monstersarea))
+        }
+        if (global.ophudshowmetrcount == 2)
+        {
+            draw_background(bgGUIMetCountBG2, ((xoff + 4) + widescreen_space), 4)
+            draw_text(((xoff + 6) + widescreen_space), 21, to_string_lz(global.monstersleft))
         }
     }
     if global.ophudshowmap

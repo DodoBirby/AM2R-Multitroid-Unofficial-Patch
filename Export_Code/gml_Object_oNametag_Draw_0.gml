@@ -1,4 +1,4 @@
-var i, arrDraw, arrID, arrX, arrY, arrSprite, arrImage, arrA1, arrA1X, arrA1Y, arrA2, arrA2X, arrA2Y, arrA2A, arrMirror, arrArmmsl, arrRoom, arrName, arrBlend, arrFXTimer, arrRoomPrev, arrState, arrSAX, arrHealth, arrSpectator, tunnel, showName, text, offset, offsetY, offsetX, healthString, barHealthString, barHealth, tankHealth, fullTanks, tank, f, _x, _y, tankSprite, stretchMult, timerStr;
+var i, arrDraw, arrID, arrX, arrY, arrSprite, arrImage, arrA1, arrA1X, arrA1Y, arrA2, arrA2X, arrA2Y, arrA2A, arrMirror, arrArmmsl, arrRoom, arrName, arrBlend, arrFXTimer, arrRoomPrev, arrState, arrSAX, arrHealth, arrSpectator, tunnel, showName, text, offset, offsetY, offsetX, healthString, barHealthString, barHealth, tankHealth, fullTanks, tank, f, _x, _y, tankSprite, stretchMult, timerStr, redColor;
 if (!instance_exists(oClient))
     instance_destroy()
 else
@@ -47,6 +47,41 @@ else
             {
                 if (arrSAX == global.sax)
                 {
+                    if (!arrSpectator)
+                    {
+                        offsetY = 48
+                        if (string_count("MorphBall", sprite_get_name(arrSprite)) > 0)
+                            offsetY = 21
+                        offsetX = 7
+                        draw_set_halign(fa_center)
+                        healthString = string(arrHealth)
+                        barHealthString = string_copy(healthString, (string_length(healthString) - 1), string_length(healthString))
+                        barHealth = real(barHealthString)
+                        tankHealth = (arrHealth - barHealth)
+                        fullTanks = (tankHealth / 100)
+                        tank = 0
+                        for (f = 0; f < 10; f++)
+                        {
+                            tank++
+                            _x = (3 * floor((f / 2)))
+                            _y = (3 * (f % 2))
+                            tankSprite = sHealthTank
+                            if (tank <= fullTanks)
+                            {
+                                tankSprite = sRHealthTank
+                                draw_sprite_ext(tankSprite, 0, ((arrX - offsetX) + _x), ((arrY - (offsetY + 7)) + _y), 1, 1, 0, c_aqua, 1)
+                            }
+                            else
+                                draw_sprite_ext(tankSprite, 0, ((arrX - offsetX) + _x), ((arrY - (offsetY + 7)) + _y), 1, 1, 0, c_white, 1)
+                        }
+                        draw_sprite_ext(sRHealthBar, 0, (arrX - offsetX), (arrY - (offsetY + 10)), 1, 1, 0, c_aqua, 1)
+                        draw_set_halign(fa_right)
+                        stretchMult = (abs((15 - round((barHealth / 6.6)))) * -1)
+                        if (barHealth == 99)
+                            stretchMult = 0
+                        draw_sprite_ext(sHealthBarStretch, 0, ((arrX - offsetX) + 14), (arrY - (offsetY + 10)), stretchMult, 1, 0, c_white, 1)
+                        draw_set_halign(fa_left)
+                    }
                     showName = 1
                     switch oControl.showname
                     {
@@ -111,6 +146,7 @@ else
                     tankHealth = (arrHealth - barHealth)
                     fullTanks = (tankHealth / 100)
                     tank = 0
+                    redColor = make_color_hsv(0, 255, 255)
                     for (f = 0; f < 10; f++)
                     {
                         tank++
@@ -118,10 +154,14 @@ else
                         _y = (3 * (f % 2))
                         tankSprite = sHealthTank
                         if (tank <= fullTanks)
-                            tankSprite = 1885
-                        draw_sprite(tankSprite, 0, ((arrX - offsetX) + _x), ((arrY - (offsetY + 7)) + _y))
+                        {
+                            tankSprite = sRHealthTank
+                            draw_sprite_ext(tankSprite, 0, ((arrX - offsetX) + _x), ((arrY - (offsetY + 7)) + _y), 1, 1, 0, redColor, 1)
+                        }
+                        else
+                            draw_sprite_ext(tankSprite, 0, ((arrX - offsetX) + _x), ((arrY - (offsetY + 7)) + _y), 1, 1, 0, c_white, 1)
                     }
-                    draw_sprite(sRHealthBar, 0, (arrX - offsetX), (arrY - (offsetY + 10)))
+                    draw_sprite_ext(sRHealthBar, 0, (arrX - offsetX), (arrY - (offsetY + 10)), 1, 1, 0, redColor, 1)
                     draw_set_halign(fa_right)
                     stretchMult = (abs((15 - round((barHealth / 6.6)))) * -1)
                     if (barHealth == 99)
