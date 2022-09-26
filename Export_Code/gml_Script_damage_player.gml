@@ -1,12 +1,19 @@
-var damage_taken, currState, experimentalExtraSAXDamageMultiplier;
+var damage_taken, currState, experimentalExtraSAXDamageMultiplier, metcount, i;
 if global.spectator
     exit
-if (global.lavastate <= 7 && global.sax)
-    global.damageMult = 1.5
-else
-    global.damageMult = 3
-if (global.lavastate > 7)
-    global.damageMult = 3
+if global.multiDamageCollision
+{
+    metcount = 0
+    for (i = 0; i <= 40; i++)
+    {
+        if (global.metdead[i] == 1)
+            metcount += 1
+    }
+    if global.sax
+        global.damageMult = (1 + (1.5 * (metcount / 41)))
+    else
+        global.damageMult = 2.5
+}
 experimentalExtraSAXDamageMultiplier = 1
 if global.experimental
     experimentalExtraSAXDamageMultiplier = 1.25
