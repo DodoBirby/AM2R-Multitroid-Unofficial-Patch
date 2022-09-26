@@ -46,7 +46,7 @@ if (missilepressed && (!oControl.kMissile))
     missilepressed = 0
 if (global.saxmode && global.enemyNearby)
 {
-    if (global.sax || global.spectator)
+    if (global.sax || (!global.spectator))
     {
         fadeout = 1
         active = 0
