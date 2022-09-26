@@ -1,4 +1,5 @@
 var size, type, alignment, sockets, v, f, arr, arrID, arrSocket, findID, i, j, bufferSize;
+metroid_map_sync()
 if global.mapSync
 {
     size = 1024

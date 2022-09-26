@@ -13,7 +13,7 @@ if (ealpha <= 0 && fadeout)
     room_goto(global.currentroom)
 }
 size = (ealpha * 24)
-if (global.saxmode && global.enemyNearby)
+if global.saxmode
 {
     fadeout = 1
     active = 0

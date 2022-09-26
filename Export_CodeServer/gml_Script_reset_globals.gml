@@ -58,6 +58,7 @@ global.mtanksSAX = 0
 global.stanksSAX = 0
 global.ptanksSAX = 0
 global.monstersleft = 0
+global.prevMonstersLeft = 0
 syncedDifficulty = 1
 syncedELM = 0
 global.seed = 0
