@@ -1199,6 +1199,20 @@
       "pre_create_code": null,
       "image_speed": 0,
       "image_index": 0
+    },
+    {
+      "x": 1680,
+      "y": 208,
+      "object_definition": "oGotoRoom",
+      "instance_id": 150386,
+      "creation_code": "gml_RoomCC_rm_a5c24_8205_Create",
+      "scale_x": 1,
+      "scale_y": 1,
+      "color": 4294967295,
+      "rotation": 0,
+      "pre_create_code": null,
+      "image_speed": 0,
+      "image_index": 0
     }
   ],
   "tiles": [
