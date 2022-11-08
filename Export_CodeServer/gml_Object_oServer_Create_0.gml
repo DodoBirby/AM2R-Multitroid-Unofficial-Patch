@@ -77,6 +77,6 @@ syncedELM = 0
 posMapModified = 0
 global.lobbyLocked = 0
 global.damageMult = 0
-global.clientVersion = "UV1.6.0"
+global.clientVersion = "UV1.6.1"
 global.experimental = 0
 global.prevMonstersLeft = 0
