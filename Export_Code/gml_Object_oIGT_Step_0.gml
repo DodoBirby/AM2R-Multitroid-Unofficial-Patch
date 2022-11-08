@@ -19,7 +19,10 @@ if surface_exists(igt_surface)
     draw_set_color(c_white)
     draw_cool_text(4, 16, steps_to_time2(global.gametime), c_black, c_white, c_gray, 1)
     if instance_exists(oClient)
+    {
         draw_cool_text(4, 27, ("ping: " + string(global.ping)), c_black, c_white, c_gray, 1)
+        draw_cool_text(4, 38, ("Save Cooldown: " + string((global.saveStationCooldown / 60))), c_black, c_white, c_gray, 1)
+    }
     if (oControl.mod_collecteditemsmap == 1)
     {
         draw_set_halign(fa_right)
