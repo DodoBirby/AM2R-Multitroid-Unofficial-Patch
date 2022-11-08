@@ -25,3 +25,5 @@ if (!global.saxmode)
         event_user(3)
     room_goto(itemroom)
 }
+else
+    sfx_play(sndMessage)
