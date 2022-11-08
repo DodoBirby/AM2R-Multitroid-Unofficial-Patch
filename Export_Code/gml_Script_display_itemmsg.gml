@@ -1,4 +1,4 @@
-if global.saxmode
+if (!global.saxmode)
 {
     global.itmtext1 = argument0
     global.itmtext2 = argument1
