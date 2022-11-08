@@ -60,10 +60,7 @@ repeat beams
     if global.wbeam
     {
         beam.damage *= 1.5
-        if (global.saxmode && (!global.experimental))
-            nofire += 23
-        else
-            nofire += 2
+        nofire += 2
     }
     if global.ibeam
     {
