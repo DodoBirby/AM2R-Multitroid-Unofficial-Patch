@@ -107,7 +107,8 @@ global.prevMonstersLeft = global.monstersleft
 if (global.lobbyLocked && global.doomenabled)
 {
     doomframes = (global.doomtime * 3600)
-    global.gametime--
+    if (global.gametime > 0)
+        global.gametime--
     incrementedtime = (doomframes - global.gametime)
     maxtime = ((doomframes * 2) / 3)
     global.damageMult = ((4 * incrementedtime) / maxtime)
