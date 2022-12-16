@@ -78,6 +78,11 @@ if (global.playerhealth > 0)
                 }
                 else
                     sjball = 0
+                if (state == WATERJET)
+                {
+                    state = AIRBALL
+                    statetime = 0
+                }
                 if global.multiDamageCollision
                 {
                     if (otherOBJ != 439)
