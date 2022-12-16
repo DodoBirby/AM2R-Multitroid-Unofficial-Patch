@@ -95,7 +95,7 @@ myposx = floor((x / 320))
 myposy = floor(((y - 8) / 240))
 mapposx = (myposx + global.mapoffsetx)
 mapposy = (myposy + global.mapoffsety)
-if (oControl.ZetaBlur != -1) && (oControl.mod_fusion == 1)
+if (oControl.ZetaBlur != -1 && oControl.mod_fusion == 1)
     ZetaBlurSprite = oControl.ZetaBlur
 else
-    ZetaBlurSprite = sMZetaBlur
+    ZetaBlurSprite = 595
