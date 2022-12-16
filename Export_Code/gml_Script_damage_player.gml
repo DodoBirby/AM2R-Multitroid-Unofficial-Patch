@@ -1,6 +1,7 @@
-var damage_taken, currState, experimentalExtraSAXDamageMultiplier, metcount, i;
+var damage_taken, currState, experimentalExtraSAXDamageMultiplier, metcount, i, serverdamageMult;
 if global.spectator
     exit
+serverdamageMult = global.damageMult
 if global.multiDamageCollision
 {
     metcount = 0
@@ -10,7 +11,11 @@ if global.multiDamageCollision
             metcount += 1
     }
     if global.sax
+    {
         global.damageMult = (1 + (1.5 * (metcount / 41)))
+        if (global.currentsuit == 2 && serverdamageMult == 8)
+            global.ignoreKnockback = 1
+    }
 }
 experimentalExtraSAXDamageMultiplier = 1
 if global.experimental
@@ -101,13 +106,6 @@ if (global.playerhealth > 0)
                 sfx_play(sndHurt)
                 ctrl_vibrate(0.5, 0.5, 10)
                 invincible = 60
-                if global.hitBySuper
-                {
-                    if (global.currentsuit == 1)
-                        invincible = 90
-                    if (global.currentsuit == 2 && global.item[5] == 1)
-                        invincible = 90
-                }
                 if (global.playerFreeze > 0)
                 {
                     invincible = 45
@@ -171,3 +169,4 @@ with (oCharacter)
 global.multiDamageCollision = 0
 global.ignoreKnockback = 0
 global.hitBySuper = 0
+global.damageMult = serverdamageMult

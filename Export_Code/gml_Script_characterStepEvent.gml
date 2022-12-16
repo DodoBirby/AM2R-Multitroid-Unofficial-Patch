@@ -3730,5 +3730,3 @@ if (!global.saxmode)
 }
 else if (global.damageMult == 2)
     global.gametime += 1
-else
-    global.gametime -= 1
