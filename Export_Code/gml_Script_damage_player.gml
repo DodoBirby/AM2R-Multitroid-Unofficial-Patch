@@ -11,8 +11,6 @@ if global.multiDamageCollision
     }
     if global.sax
         global.damageMult = (1 + (1.5 * (metcount / 41)))
-    else
-        global.damageMult = 2.5
 }
 experimentalExtraSAXDamageMultiplier = 1
 if global.experimental

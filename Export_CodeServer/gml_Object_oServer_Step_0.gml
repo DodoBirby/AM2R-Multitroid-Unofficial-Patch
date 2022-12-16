@@ -1,4 +1,4 @@
-var sockets, size, type, alignment, bufferSize, i, time, a, match, b, arrList, evnt;
+var sockets, size, type, alignment, bufferSize, i, time, a, match, b, arrList, evnt, maxtime, doomframes, incrementedtime;
 if (prevPlayerListSize != ds_list_size(playerList) && ds_list_size(playerList) > 0)
 {
     prevPlayerListSize = ds_list_size(playerList)
@@ -105,4 +105,12 @@ if (global.prevMonstersLeft != global.monstersleft)
     alarm[5] = 1
 global.prevMonstersLeft = global.monstersleft
 if (global.lobbyLocked && global.doomenabled)
+{
+    doomframes = (global.doomtime * 3600)
     global.gametime--
+    incrementedtime = (doomframes - global.gametime)
+    maxtime = ((doomframes * 2) / 3)
+    global.damageMult = ((4 * incrementedtime) / maxtime)
+    if (global.gametime <= 0)
+        global.damageMult = 8
+}
