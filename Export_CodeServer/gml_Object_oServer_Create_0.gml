@@ -80,3 +80,6 @@ global.damageMult = 0
 global.clientVersion = "UV1.6.2"
 global.experimental = 0
 global.prevMonstersLeft = 0
+global.gametime = 0
+global.doomtime = 0
+global.doomenabled = 0

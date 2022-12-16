@@ -104,3 +104,5 @@ if (!global.lobbyLocked)
 if (global.prevMonstersLeft != global.monstersleft)
     alarm[5] = 1
 global.prevMonstersLeft = global.monstersleft
+if (global.lobbyLocked && global.doomenabled)
+    global.gametime--

@@ -404,7 +404,7 @@
     },
     {
       "x": 896,
-      "y": 696,
+      "y": 728,
       "object_definition": "oLockLobby",
       "instance_id": 100010,
       "creation_code": null,
@@ -530,7 +530,7 @@
     },
     {
       "x": 1120,
-      "y": 752,
+      "y": 784,
       "object_definition": "oResetToggles",
       "instance_id": 100019,
       "creation_code": null,
@@ -544,7 +544,7 @@
     },
     {
       "x": 1120,
-      "y": 808,
+      "y": 840,
       "object_definition": "oDifficulty",
       "instance_id": 100020,
       "creation_code": null,
@@ -558,7 +558,7 @@
     },
     {
       "x": 1120,
-      "y": 864,
+      "y": 896,
       "object_definition": "oELM",
       "instance_id": 100021,
       "creation_code": null,
@@ -642,7 +642,7 @@
     },
     {
       "x": 1120,
-      "y": 696,
+      "y": 728,
       "object_definition": "oSAXModeToggle",
       "instance_id": 100027,
       "creation_code": null,
@@ -673,6 +673,20 @@
       "y": 672,
       "object_definition": "oExperimentalToggle",
       "instance_id": 100029,
+      "creation_code": null,
+      "scale_x": 1,
+      "scale_y": 1,
+      "color": 4294967295,
+      "rotation": 0,
+      "pre_create_code": null,
+      "image_speed": 0,
+      "image_index": 0
+    },
+    {
+      "x": 1248,
+      "y": 704,
+      "object_definition": "oDoomTime",
+      "instance_id": 100030,
       "creation_code": null,
       "scale_x": 1,
       "scale_y": 1,
