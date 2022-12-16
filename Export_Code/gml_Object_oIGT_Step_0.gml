@@ -23,6 +23,7 @@ if surface_exists(igt_surface)
         draw_cool_text(4, 27, ("ping: " + string(global.ping)), c_black, c_white, c_gray, 1)
         if (global.saveStationCooldown > 0)
             draw_cool_text(4, 38, ("Save Cooldown: " + string((global.saveStationCooldown / 60))), c_black, c_white, c_gray, 1)
+        draw_cool_text(4, 49, ("Damage Multiplier: " + string(global.damageMult)), c_black, c_white, c_gray, 1)
     }
     if (oControl.mod_collecteditemsmap == 1)
     {

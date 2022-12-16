@@ -453,6 +453,7 @@ switch type_event
                     global.sax = 1
                 break
             case 113:
+                time = buffer_read(_buffer, buffer_s32)
                 saxmode = buffer_read(_buffer, buffer_u8)
                 lobbyLocked = buffer_read(_buffer, buffer_u8)
                 samCount = buffer_read(_buffer, buffer_u8)
@@ -462,6 +463,8 @@ switch type_event
                 global.damageMult = damageMult
                 global.saxmode = saxmode
                 global.experimental = experimental
+                if global.saxmode
+                    global.gametime = time
                 if (!lobbyLocked)
                 {
                     if global.spectator

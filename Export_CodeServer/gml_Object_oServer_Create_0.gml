@@ -83,3 +83,4 @@ global.prevMonstersLeft = 0
 global.gametime = 0
 global.doomtime = 0
 global.doomenabled = 0
+global.doomstarted = 0

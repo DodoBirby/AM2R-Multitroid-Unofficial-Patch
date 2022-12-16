@@ -3723,5 +3723,12 @@ if (onfire > 0)
 if (ballbounce > 0)
     ballbounce -= 1
 statetime += 1
-if (state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIP && state != SAVINGSHIPFX)
+if (!global.saxmode)
+{
+    if (state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIP && state != SAVINGSHIPFX)
+        global.gametime += 1
+}
+else if (global.damageMult == 2)
     global.gametime += 1
+else
+    global.gametime -= 1

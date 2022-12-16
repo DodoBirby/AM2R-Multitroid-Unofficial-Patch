@@ -114,3 +114,5 @@ if (global.lobbyLocked && global.doomenabled)
     if (global.gametime <= 0)
         global.damageMult = 8
 }
+if (!global.doomenabled)
+    global.damageMult = 2

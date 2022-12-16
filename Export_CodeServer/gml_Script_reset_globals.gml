@@ -61,6 +61,7 @@ global.monstersleft = 0
 global.prevMonstersLeft = 0
 global.gametime = 0
 global.doomenabled = 0
+global.doomstarted = 0
 syncedDifficulty = 1
 syncedELM = 0
 global.seed = 0

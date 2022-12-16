@@ -3,8 +3,10 @@ if global.lobbyLocked
 {
     if (global.doomtime >= 0)
     {
-        global.gametime = ((global.doomtime * 60) * 60)
+        if (!global.doomstarted)
+            global.gametime = ((global.doomtime * 60) * 60)
         global.doomenabled = 1
+        global.doomstarted = 1
     }
     else
     {
