@@ -813,11 +813,6 @@ switch type_event
                 timeToCheck = current_time
                 if (lag != undefined && lag <= 750 && lagPositions != undefined)
                 {
-                    lagPosArr = ds_list_find_value(lagPositions, g)
-                    lagPosTime = lagPosArr[0]
-                    lagPosID = lagPosArr[1]
-                    lagPosX = lagPosArr[2]
-                    lagPosY = lagPosArr[3]
                     buffer_delete(buffer)
                     size = 1024
                     type = buffer_grow
