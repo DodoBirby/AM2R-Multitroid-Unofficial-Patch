@@ -813,7 +813,6 @@ switch type_event
                 timeToCheck = current_time
                 if (lag != undefined && lag <= 750 && lagPositions != undefined)
                 {
-                    show_debug_message("im in")
                     for (g = 0; g < ds_list_size(lagPositions); g++)
                     {
                         lagPosArr = ds_list_find_value(lagPositions, g)
@@ -821,32 +820,28 @@ switch type_event
                         lagPosID = lagPosArr[1]
                         lagPosX = lagPosArr[2]
                         lagPosY = lagPosArr[3]
-                        if ((timeToCheck - lag) > lagPosTime && checkX == lagPosX && checkY == lagPosY && checkID == lagPosID)
-                        {
-                            show_debug_message(((("yeah " + string(lagPosX)) + " ") + string(lagPosY)))
-                            buffer_delete(buffer)
-                            size = 1024
-                            type = buffer_grow
-                            alignment = 1
-                            buffer = buffer_create(size, type, alignment)
-                            buffer_seek(buffer, buffer_seek_start, 0)
-                            buffer_write(buffer, buffer_u8, 110)
-                            buffer_write(buffer, buffer_u8, checkBeam)
-                            buffer_write(buffer, buffer_u8, checkMissile)
-                            buffer_write(buffer, buffer_u8, checkDamage)
-                            buffer_write(buffer, buffer_u8, checkFreeze)
-                            bufferSize = buffer_tell(buffer)
-                            buffer_seek(buffer, buffer_seek_start, 0)
-                            buffer_write(buffer, buffer_s32, bufferSize)
-                            buffer_write(buffer, buffer_u8, 110)
-                            buffer_write(buffer, buffer_u8, checkBeam)
-                            buffer_write(buffer, buffer_u8, checkMissile)
-                            buffer_write(buffer, buffer_u8, checkDamage)
-                            buffer_write(buffer, buffer_u8, checkFreeze)
-                            if (tempSocket != -100)
-                                network_send_packet(tempSocket, buffer, buffer_tell(buffer))
-                            g = ds_list_size(lagPositions)
-                        }
+                        buffer_delete(buffer)
+                        size = 1024
+                        type = buffer_grow
+                        alignment = 1
+                        buffer = buffer_create(size, type, alignment)
+                        buffer_seek(buffer, buffer_seek_start, 0)
+                        buffer_write(buffer, buffer_u8, 110)
+                        buffer_write(buffer, buffer_u8, checkBeam)
+                        buffer_write(buffer, buffer_u8, checkMissile)
+                        buffer_write(buffer, buffer_u8, checkDamage)
+                        buffer_write(buffer, buffer_u8, checkFreeze)
+                        bufferSize = buffer_tell(buffer)
+                        buffer_seek(buffer, buffer_seek_start, 0)
+                        buffer_write(buffer, buffer_s32, bufferSize)
+                        buffer_write(buffer, buffer_u8, 110)
+                        buffer_write(buffer, buffer_u8, checkBeam)
+                        buffer_write(buffer, buffer_u8, checkMissile)
+                        buffer_write(buffer, buffer_u8, checkDamage)
+                        buffer_write(buffer, buffer_u8, checkFreeze)
+                        if (tempSocket != -100)
+                            network_send_packet(tempSocket, buffer, buffer_tell(buffer))
+                        g = ds_list_size(lagPositions)
                     }
                 }
                 break
