@@ -814,8 +814,7 @@ switch type_event
                 if (lag != undefined && lag <= 750 && lagPositions != undefined)
                 {
                     show_debug_message("im in")
-                    g = 0
-                    while (g < ds_list_size(lagPositions))
+                    for (g = 0; g < ds_list_size(lagPositions); g++)
                     {
                         lagPosArr = ds_list_find_value(lagPositions, g)
                         lagPosTime = lagPosArr[0]
@@ -846,16 +845,11 @@ switch type_event
                             buffer_write(buffer, buffer_u8, checkFreeze)
                             if (tempSocket != -100)
                                 network_send_packet(tempSocket, buffer, buffer_tell(buffer))
-                        }
-                        else
-                        {
-                            g++
-                            continue
+                            g = ds_list_size(lagPositions)
                         }
                     }
                 }
-                else
-                    break
+                break
             case 0:
                 ds_grid_read(vars, strict_decompress(buffer_read(_buffer, buffer_string)))
                 clientID = buffer_read(_buffer, buffer_u8)
