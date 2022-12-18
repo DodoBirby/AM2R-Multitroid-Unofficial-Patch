@@ -111,9 +111,12 @@ if (global.lobbyLocked && global.doomenabled)
         global.gametime--
     incrementedtime = (doomframes - global.gametime)
     maxtime = ((doomframes * 2) / 3)
-    global.damageMult = ((4 * incrementedtime) / maxtime)
-    if (global.gametime <= 0)
+    if (incrementedtime <= maxtime)
+        global.damageMult = ((4 * incrementedtime) / maxtime)
+    else if (global.gametime <= 0)
         global.damageMult = 8
+    else
+        global.damageMult = 4
 }
 if (!global.doomenabled)
     global.damageMult = 2
