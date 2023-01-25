@@ -12,11 +12,7 @@ if ((global.currentweapon == 1 && global.missiles > 0) || (global.currentweapon 
     with (msl)
         beam_offset(4, direction)
     if (argument0 == 180)
-    {
         msl.x += 4
-        if (state != GRIP)
-            msl.y -= 1
-    }
     if (argument0 == 0)
         msl.x -= 4
     if (argument0 == 90)
