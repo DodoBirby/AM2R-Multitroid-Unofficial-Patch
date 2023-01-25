@@ -9,7 +9,7 @@ if (myid != other.myid && sax != other.sax && (!other.spectator))
     global.checkFreeze = 0
     if icemissiles
         global.checkFreeze = 1
-    if (sax != other.sax)
+    if (myid == 0)
     {
         with (oClient)
             event_user(3)

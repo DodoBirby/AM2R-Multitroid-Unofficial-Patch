@@ -364,6 +364,7 @@ switch type_event
                 global.showHealthIndicatorsTimer = 900
                 break
             case 110:
+                global.showHealthIndicatorsTimer = 900
                 checkBeam = buffer_read(_buffer, buffer_u8)
                 checkMissile = buffer_read(_buffer, buffer_u8)
                 checkDamage = buffer_read(_buffer, buffer_u8)

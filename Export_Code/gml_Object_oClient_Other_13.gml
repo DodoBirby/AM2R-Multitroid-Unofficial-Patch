@@ -1,4 +1,5 @@
 var size, type, alignment, bufferSize, result;
+global.showHealthIndicatorsTimer = 900
 size = 1024
 type = buffer_grow
 alignment = 1
