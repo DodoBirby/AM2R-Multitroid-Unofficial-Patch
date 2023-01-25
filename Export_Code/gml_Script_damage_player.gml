@@ -170,3 +170,8 @@ global.multiDamageCollision = 0
 global.ignoreKnockback = 0
 global.hitBySuper = 0
 global.damageMult = serverdamageMult
+if instance_exists(oA2WaterJetMachine)
+{
+    with (oA2WaterJetMachine)
+        state = 0
+}
