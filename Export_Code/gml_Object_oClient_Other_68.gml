@@ -430,6 +430,11 @@ switch type_event
                             }
                             if (checkDamage == 100)
                                 checkDamage = 50
+                            if checkMissile
+                            {
+                                if (global.playerFreeze > 0)
+                                    checkDamage *= 0.8
+                            }
                             if ((!canbehit) || state == IDLE || (state == SAVING && state == SAVINGFX) || state == SAVINGSHIPFX || state == SAVINGSHIP || state == ELEVATOR || state == GFELEVATOR)
                                 checkDamage = 0
                             if ((!global.frozenNormally) && canbehit && state != IDLE && state != SAVING && state != SAVINGFX && state != SAVINGSHIPFX && state != SAVINGSHIP && state != ELEVATOR && state != GFELEVATOR)
