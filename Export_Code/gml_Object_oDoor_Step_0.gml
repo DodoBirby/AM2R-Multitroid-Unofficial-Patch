@@ -1,3 +1,4 @@
+var greydoor;
 if (open == 1)
 {
     if (image_index < (sprite_get_number(sprite_index) - 1))
@@ -82,6 +83,7 @@ if (event > -1)
 }
 if (global.spectator && instance_exists(oCharacter) && distance_to_object(oCharacter) < 50 && room != rm_a2a03 && id != 114272 && room != rm_a4a06 && room != rm_a4a08 && room != rm_a5b02 && room != rm_a8a13)
 {
-    if (!open)
+    greydoor = (global.saxmode && global.sax && lock == 4)
+    if ((!open) && (!greydoor))
         open = 1
 }
