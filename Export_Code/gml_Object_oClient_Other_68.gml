@@ -306,7 +306,8 @@ switch type_event
                 break
             case 106:
                 load_character_vars()
-                reset_dmap()
+                if (!global.saxmode)
+                    reset_dmap()
                 global.itemPrev = array_clone(global.item)
                 global.metdeadPrev = array_clone(global.metdead)
                 global.eventPrev = array_clone(global.event)
