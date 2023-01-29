@@ -1192,8 +1192,11 @@ if (state == 100)
             with (grab_obj)
                 instance_destroy()
         }
-        with (cam)
-            instance_destroy()
+        if (!is_undefined(cam))
+        {
+            with (cam)
+                instance_destroy()
+        }
     }
     if (statetime < 30)
     {

@@ -8,6 +8,7 @@ else
     omega_body = 617
 makeActive()
 setCollisionBounds(-10, -30, 10, 46)
+cam = undefined
 myhealth = 350
 myhealth = global.mod_omegahealth
 flashing = 0
