@@ -181,8 +181,6 @@ if (stopSAXMusTimer > 0)
             audio_stop_sound(musSAXEnvironmentalAmbience)
         if audio_is_playing(musSAXAppear)
             audio_stop_sound(musSAXAppear)
-        if audio_is_playing(musSAXChase)
-            audio_stop_sound(musSAXChase)
         if audio_is_playing(oMusicV2.currentbgm)
             audio_sound_gain(oMusicV2.currentbgm, (global.opmusicvolume / 100), fadeoutTimer)
     }
