@@ -1,4 +1,4 @@
-var type_event, ip, findIP, findKickIP, ban, size, type, alignment, bufferSize, findsocket, i, arrList, socket, socketID, ID, arr, seed, findID, _buffer, bufferSizePacket, clientID, sax, sockets, preferredID, f, arrID, arrSocket, clientX, clientY, clientSprite, clientImage, clientA1, clientA1X, clientA1Y, clientA2, clientA2X, clientA2Y, clientA2A, clientMirror, clientArmmsl, clientRoom, clientName, clientBlend, clientFXTimer, clientRoomPrev, clientState, clientSAX, clientSpeedboost, clientSJBall, clientSJDir, clientSpeedCharge, clientPlayerHealth, clientSpectator, clientInvincible, clientMosaic, clientReform, clientVisible, list, clientMapX, clientMapY, spectator, findSamus, event, findDead, playerHealth, missiles, smissiles, pbombs, ping, realPing, spacejump, screwattack, spiderball, speedbooster, bomb, ibeam, wbeam, pbeam, sbeam, cbeam, tempSocket, checkID, checkX, checkY, checkBeam, checkMissile, checkDamage, checkFreeze, lag, lagPositions, timeToCheck, g, lagPosArr, lagPosTime, lagPosID, lagPosX, lagPosY, packetID, name, lobbyLocked, _queenHealth, phase, state, monstersLeft, monstersArea, item, itemArr, v, metdead, metdeadArr, eventArr, tileCount, tileX, tileY, tileData, itemstaken, maxmissiles, maxsmissiles, maxpbombs, maxhealth, etanks, mtanks, stanks, ptanks, gametime, findTime, findReset, dir, sprX, sprY, charge, bombX, bombY, currentWeapon, missileX, missileY, velX, velY, icemissiles, pbombX, pbombY, playerhealth, syncDiff, syncELM, otherAbsorbRelativeX, otherAbsorbRelativeY, otherAbsorbSpriteHeight, saxmode, findIDSamus, findIDSAX, mapposx, mapposy, mirror, sentRoom, playerX, playerY, receivedItem, receivedEvent, receivedMetdead, j, receiveddmap, msg, splitBy, slot, splits, str2, currStr, wrongVersion, playerState, combatState;
+var type_event, ip, findIP, findKickIP, ban, size, type, alignment, bufferSize, findsocket, i, arrList, socket, socketID, ID, arr, seed, findID, _buffer, bufferSizePacket, clientID, sax, sockets, preferredID, f, arrID, arrSocket, clientX, clientY, clientSprite, clientImage, clientA1, clientA1X, clientA1Y, clientA2, clientA2X, clientA2Y, clientA2A, clientMirror, clientArmmsl, clientRoom, clientName, clientBlend, clientFXTimer, clientRoomPrev, clientState, clientSAX, clientSpeedboost, clientSJBall, clientSJDir, clientSpeedCharge, clientPlayerHealth, clientSpectator, clientInvincible, clientMosaic, clientReform, clientVisible, list, clientMapX, clientMapY, spectator, findSamus, event, findDead, playerHealth, missiles, smissiles, pbombs, ping, realPing, spacejump, screwattack, spiderball, speedbooster, bomb, ibeam, wbeam, pbeam, sbeam, cbeam, tempSocket, checkID, checkX, checkY, checkBeam, checkMissile, checkDamage, checkFreeze, lag, lagPositions, timeToCheck, g, lagPosArr, lagPosTime, lagPosID, lagPosX, lagPosY, packetID, name, lobbyLocked, _queenHealth, phase, state, monstersLeft, monstersArea, item, itemArr, v, metdead, metdeadArr, eventArr, tileCount, tileX, tileY, tileData, itemstaken, maxmissiles, maxsmissiles, maxpbombs, maxhealth, etanks, mtanks, stanks, ptanks, gametime, findTime, findReset, dir, sprX, sprY, charge, bombX, bombY, currentWeapon, missileX, missileY, velX, velY, icemissiles, pbombX, pbombY, playerhealth, syncDiff, syncELM, otherAbsorbRelativeX, otherAbsorbRelativeY, otherAbsorbSpriteHeight, saxmode, findIDSamus, findIDSAX, mapposx, mapposy, mirror, sentRoom, playerX, playerY, receivedItem, receivedEvent, receivedMetdead, j, receiveddmap, msg, splitBy, slot, splits, str2, currStr, wrongVersion, playerState, combatState, checkDir;
 type_event = ds_map_find_value(async_load, "type")
 ip = ds_map_find_value(async_load, "ip")
 findIP = ds_list_find_index(banList, ip)
@@ -801,6 +801,7 @@ switch type_event
                 checkMissile = buffer_read(_buffer, buffer_u8)
                 checkDamage = buffer_read(_buffer, buffer_u8)
                 checkFreeze = buffer_read(_buffer, buffer_u8)
+                checkDir = buffer_read(_buffer, buffer_u8)
                 tempSocket = -100
                 for (i = 0; i < ds_list_size(idList); i++)
                 {
@@ -824,6 +825,7 @@ switch type_event
                     buffer_write(buffer, buffer_u8, checkMissile)
                     buffer_write(buffer, buffer_u8, checkDamage)
                     buffer_write(buffer, buffer_u8, checkFreeze)
+                    buffer_write(buffer, buffer_u8, checkDir)
                     bufferSize = buffer_tell(buffer)
                     buffer_seek(buffer, buffer_seek_start, 0)
                     buffer_write(buffer, buffer_s32, bufferSize)
@@ -832,6 +834,7 @@ switch type_event
                     buffer_write(buffer, buffer_u8, checkMissile)
                     buffer_write(buffer, buffer_u8, checkDamage)
                     buffer_write(buffer, buffer_u8, checkFreeze)
+                    buffer_write(buffer, buffer_u8, checkDir)
                     if (tempSocket != -100)
                         network_send_packet(tempSocket, buffer, buffer_tell(buffer))
                 }
@@ -1502,7 +1505,11 @@ switch type_event
                                         buffer_write(buffer, buffer_u8, tileY)
                                         buffer_write(buffer, buffer_u8, tileData)
                                         if (tileData > global.dmapSamus[tileX, tileY])
+                                        {
                                             global.dmapSamus[tileX, tileY] = tileData
+                                            if (tileData == 11)
+                                                alarm[5] = 1
+                                        }
                                         else if (tileData < global.dmapSamus[tileX, tileY])
                                         {
                                             if (global.dmapSamus[tileX, tileY] == 10 && tileData == 1)
@@ -1522,7 +1529,11 @@ switch type_event
                                         buffer_write(buffer, buffer_u8, tileY)
                                         buffer_write(buffer, buffer_u8, tileData)
                                         if (tileData > global.dmapSAX[tileX, tileY])
+                                        {
                                             global.dmapSAX[tileX, tileY] = tileData
+                                            if (tileData == 11)
+                                                alarm[5] = 1
+                                        }
                                         else if (tileData < global.dmapSAX[tileX, tileY])
                                         {
                                             if (global.dmapSAX[tileX, tileY] == 10 && tileData == 1)

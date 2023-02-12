@@ -101,9 +101,6 @@ if (ds_list_size(playerList) > 0 && ds_list_size(resetList) > 0)
 }
 if (!global.lobbyLocked)
     ds_list_clear(deadList)
-if (global.prevMonstersLeft != global.monstersleft)
-    alarm[5] = 1
-global.prevMonstersLeft = global.monstersleft
 if (global.lobbyLocked && global.doomenabled)
 {
     doomframes = (global.doomtime * 3600)
