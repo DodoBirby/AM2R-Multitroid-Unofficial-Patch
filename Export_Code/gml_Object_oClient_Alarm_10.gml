@@ -58,6 +58,7 @@ if sameRoom
             buffer_write(buffer, buffer_u8, global.mosaic)
             buffer_write(buffer, buffer_u8, global.reform)
             buffer_write(buffer, buffer_u8, oCharacter.visible)
+            buffer_write(buffer, buffer_u8, oCharacter.sball)
             bufferSize = buffer_tell(buffer)
             buffer_seek(buffer, buffer_seek_start, 0)
             buffer_write(buffer, buffer_s32, bufferSize)
@@ -93,6 +94,7 @@ if sameRoom
             buffer_write(buffer, buffer_u8, global.mosaic)
             buffer_write(buffer, buffer_u8, global.reform)
             buffer_write(buffer, buffer_u8, oCharacter.visible)
+            buffer_write(buffer, buffer_u8, oCharacter.sball)
             result = network_send_packet(socket, buffer, buffer_tell(buffer))
             if (global.roomPrev != room)
                 global.roomPrev = room

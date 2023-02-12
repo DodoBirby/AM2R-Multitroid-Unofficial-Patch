@@ -1,4 +1,4 @@
-var b, arrDraw, arrID, arrX, arrY, arrSprite, arrImage, arrA1, arrA1X, arrA1Y, arrA2, arrA2X, arrA2Y, arrA2A, arrMirror, arrArmmsl, arrRoom, arrName, arrBlend, arrFXTimer, arrRoomPrev, arrState, arrSAX, arrSpeedboost, arrSJBall, arrSJDir, arrSpeedCharge, arrSpectator, arrInvincible, arrMosaic, arrReform, arrVisible, spacejump, screwattack, spiderball, speedbooster, i, tempArr, ID, canDraw, sprHeight, findID, sax, arrMapIcon, spectator, rectoffset, f, arrList, _x, _y, superjump, sjstart;
+var b, arrDraw, arrID, arrX, arrY, arrSprite, arrImage, arrA1, arrA1X, arrA1Y, arrA2, arrA2X, arrA2Y, arrA2A, arrMirror, arrArmmsl, arrRoom, arrName, arrBlend, arrFXTimer, arrRoomPrev, arrState, arrSAX, arrSpeedboost, arrSJBall, arrSJDir, arrSpeedCharge, arrSpectator, arrInvincible, arrMosaic, arrReform, arrVisible, spacejump, screwattack, spiderball, speedbooster, i, tempArr, ID, canDraw, sprHeight, findID, sax, arrMapIcon, spectator, rectoffset, f, arrList, _x, _y, superjump, sjstart, arrSBall;
 if (ds_list_size(roomListData) > 0)
 {
     for (b = 0; b < ds_list_size(roomListData); b++)
@@ -34,6 +34,7 @@ if (ds_list_size(roomListData) > 0)
         arrMosaic = arrDraw[28]
         arrReform = arrDraw[29]
         arrVisible = arrDraw[30]
+        arrSBall = arrDraw[31]
         spacejump = global.spacejump
         screwattack = global.screwattack
         spiderball = global.spiderball

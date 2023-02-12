@@ -1,4 +1,4 @@
-var i, arrDraw, arrID, arrX, arrY, arrSprite, arrImage, arrA1, arrA1X, arrA1Y, arrA2, arrA2X, arrA2Y, arrA2A, arrMirror, arrArmmsl, arrRoom, arrName, arrBlend, arrFXTimer, arrRoomPrev, arrState, arrSAX, arrHealth, arrSpectator, tunnel, showName, text, offset, offsetY, offsetX, healthString, barHealthString, barHealth, tankHealth, fullTanks, tank, f, _x, _y, tankSprite, stretchMult, timerStr, redColor;
+var i, arrDraw, arrID, arrX, arrY, arrSprite, arrImage, arrA1, arrA1X, arrA1Y, arrA2, arrA2X, arrA2Y, arrA2A, arrMirror, arrArmmsl, arrRoom, arrName, arrBlend, arrFXTimer, arrRoomPrev, arrState, arrSAX, arrHealth, arrSpectator, tunnel, showName, text, offset, offsetY, offsetX, healthString, barHealthString, barHealth, tankHealth, fullTanks, tank, f, _x, _y, tankSprite, stretchMult, timerStr, redColor, arrSBall;
 if (!instance_exists(oClient))
     instance_destroy()
 else
@@ -31,6 +31,7 @@ else
             arrSAX = arrDraw[20]
             arrHealth = arrDraw[25]
             arrSpectator = arrDraw[26]
+            arrSBall = arrDraw[31]
             tunnel = 0
             if (string_count("MorphBall", sprite_get_name(arrSprite)) > 0)
             {
@@ -132,7 +133,7 @@ else
                         }
                     }
                 }
-                else if (global.showHealthIndicators && (!tunnel) && (!arrSpectator))
+                else if (global.showHealthIndicators && (!tunnel) && (!arrSpectator) && (!arrSBall))
                 {
                     offsetY = 42
                     if (string_count("MorphBall", sprite_get_name(arrSprite)) > 0)
