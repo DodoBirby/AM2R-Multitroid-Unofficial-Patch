@@ -17,6 +17,13 @@ if (invincible == 0)
     global.multiDamageCollision = 1
     if (other.direction > 90 && other.direction < 270)
         damageDir = 1
+    if (otherOBJ == 438)
+    {
+        if (other.x < x)
+            damageDir = -1
+        else
+            damageDir = 1
+    }
     if (otherOBJ == 440 && global.playerFreeze > 151)
     {
         with (other.id)

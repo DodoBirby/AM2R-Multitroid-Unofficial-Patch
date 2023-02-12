@@ -1,4 +1,4 @@
-var type_event, _buffer, bufferSize, bufferSizePacket, clientID, findsocket, i, arrList, f, v, ban, clientX, clientY, clientSprite, clientImage, clientA1, clientA1X, clientA1Y, clientA2, clientA2X, clientA2Y, clientA2A, clientMirror, clientArmmsl, clientRoom, clientName, clientBlend, clientFXTimer, clientRoomPrev, clientState, clientSAX, clientSpeedboost, clientSJBall, clientSJDir, clientSpeedCharge, clientPlayerHealth, clientSpectator, clientInvincible, clientMosaic, clientReform, clientVisible, arr, indexValue, clientMapX, clientMapY, sax, spectator, arrPosData, find, event, playerHealth, missiles, smissiles, pbombs, playerhealth, ping, item, metdead, team, spacejump, screwattack, spiderball, speedbooster, bomb, ibeam, wbeam, pbeam, sbeam, cbeam, otherItemArr, IDCheck, tempArr, ID, checkBeam, checkMissile, checkDamage, checkFreeze, newTeam, saxmode, lobbyLocked, samCount, getGravity, receivedPasswordHash, size, type, alignment, result, _seed, monstersLeft, monstersArea, itemArr, metdeadArr, eventArr, tileCount, tileX, tileY, tileData, itemstaken, maxmissiles, maxsmissiles, maxpbombs, maxhealth, etanks, mtanks, stanks, ptanks, time, dir, sprX, sprY, charge, arrDraw, arrID, bombX, bombY, currentWeapon, missileX, missileY, velX, velY, icemissiles, pbombX, pbombY, syncDiff, str, syncELM, otherAbsorbRelativeX, otherAbsorbRelativeY, otherAbsorbSpriteHeight, mapposx, mapposy, mirror, sentRoom, playerX, playerY, resend, receivedItem, etankCount, stankCount, ptankCount, mtankCount, receivedEvent, receivedMetdead, countArea, countLeft, part, j, receiveddmap, damageMultStr, damageMult, experimental, playerState, combatState, freezeOff;
+var type_event, _buffer, bufferSize, bufferSizePacket, clientID, findsocket, i, arrList, f, v, ban, clientX, clientY, clientSprite, clientImage, clientA1, clientA1X, clientA1Y, clientA2, clientA2X, clientA2Y, clientA2A, clientMirror, clientArmmsl, clientRoom, clientName, clientBlend, clientFXTimer, clientRoomPrev, clientState, clientSAX, clientSpeedboost, clientSJBall, clientSJDir, clientSpeedCharge, clientPlayerHealth, clientSpectator, clientInvincible, clientMosaic, clientReform, clientVisible, arr, indexValue, clientMapX, clientMapY, sax, spectator, arrPosData, find, event, playerHealth, missiles, smissiles, pbombs, playerhealth, ping, item, metdead, team, spacejump, screwattack, spiderball, speedbooster, bomb, ibeam, wbeam, pbeam, sbeam, cbeam, otherItemArr, IDCheck, tempArr, ID, checkBeam, checkMissile, checkDamage, checkFreeze, newTeam, saxmode, lobbyLocked, samCount, getGravity, receivedPasswordHash, size, type, alignment, result, _seed, monstersLeft, monstersArea, itemArr, metdeadArr, eventArr, tileCount, tileX, tileY, tileData, itemstaken, maxmissiles, maxsmissiles, maxpbombs, maxhealth, etanks, mtanks, stanks, ptanks, time, dir, sprX, sprY, charge, arrDraw, arrID, bombX, bombY, currentWeapon, missileX, missileY, velX, velY, icemissiles, pbombX, pbombY, syncDiff, str, syncELM, otherAbsorbRelativeX, otherAbsorbRelativeY, otherAbsorbSpriteHeight, mapposx, mapposy, mirror, sentRoom, playerX, playerY, resend, receivedItem, etankCount, stankCount, ptankCount, mtankCount, receivedEvent, receivedMetdead, countArea, countLeft, part, j, receiveddmap, damageMultStr, damageMult, experimental, playerState, combatState, freezeOff, checkDir;
 disconnectTimer = 900
 if (!global.acceptPacket)
     exit
@@ -370,6 +370,7 @@ switch type_event
                 checkMissile = buffer_read(_buffer, buffer_u8)
                 checkDamage = buffer_read(_buffer, buffer_u8)
                 checkFreeze = buffer_read(_buffer, buffer_u8)
+                checkDir = buffer_read(_buffer, buffer_u8)
                 if (checkMissile && global.playerFreeze > 151)
                     break
                 else
@@ -380,6 +381,8 @@ switch type_event
                         {
                             damageDir = -1
                             knockbackY = -3
+                            if (checkDir > 90 && checkDir < 270)
+                                damageDir = 1
                             global.multiDamageCollision = 1
                             if checkBeam
                             {
