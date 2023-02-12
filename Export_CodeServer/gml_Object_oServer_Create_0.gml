@@ -84,3 +84,4 @@ global.gametime = 0
 global.doomtime = 0
 global.doomenabled = 0
 global.doomstarted = 0
+global.juggActive = 0

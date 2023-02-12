@@ -466,5 +466,6 @@ global.experimental = 0
 global.saveStationCooldown = 0
 global.hitBySuper = 0
 global.freezeDisabled = 0
+global.juggActive = 0
 reset_map()
 load_character_vars()
