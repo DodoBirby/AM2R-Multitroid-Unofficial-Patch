@@ -467,5 +467,6 @@ global.saveStationCooldown = 0
 global.hitBySuper = 0
 global.freezeDisabled = 0
 global.juggActive = 0
+global.MetCount = 41
 reset_map()
 load_character_vars()
