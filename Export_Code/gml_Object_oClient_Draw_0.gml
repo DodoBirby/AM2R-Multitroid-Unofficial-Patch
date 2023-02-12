@@ -292,11 +292,11 @@ if instance_exists(oMapCursor)
             arrY = arrMapIcon[2]
             sax = arrMapIcon[3]
             spectator = arrMapIcon[5]
-            if global.spectator
+            if ((global.spectator && (!global.sax)) || (global.sax && global.juggActive))
             {
                 if (!sax)
                 {
-                    if spectator
+                    if (spectator && (!global.sax))
                     {
                         if (arrX != 3 && arrY != 3)
                             draw_sprite_ext(sSpectatorIcon, 0, (arrX * 8), ((arrY * 8) + 32), 1, 1, direction, c_white, oMapCursor.image_alpha)

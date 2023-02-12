@@ -13,7 +13,7 @@ if global.multiDamageCollision
     if global.sax
     {
         global.damageMult = (1 + (1.5 * (metcount / 41)))
-        if (global.currentsuit == 2 && serverdamageMult == 8)
+        if (global.currentsuit == 2 && global.juggActive)
             global.ignoreKnockback = 1
     }
 }

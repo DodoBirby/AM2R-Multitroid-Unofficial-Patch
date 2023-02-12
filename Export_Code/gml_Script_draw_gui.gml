@@ -546,11 +546,11 @@ if (global.classicmode == 0 && global.opshowhud)
                 spectator = arrData[5]
                 playerState = arrData[6]
                 combatState = arrData[7]
-                if global.spectator
+                if ((global.spectator && (!global.sax)) || (global.sax && global.juggActive))
                 {
                     if (!sax)
                     {
-                        if spectator
+                        if (spectator && (!global.sax))
                         {
                             if (abs(xDiff) <= 2 && abs(yDiff) <= 1)
                                 draw_sprite_ext(sSpectatorIcon, 0, (((276 + widescreen_space) + 16) - (xDiff * 8)), (12 - (yDiff * 8)), 1, 1, direction, c_white, oControl.malpha)
