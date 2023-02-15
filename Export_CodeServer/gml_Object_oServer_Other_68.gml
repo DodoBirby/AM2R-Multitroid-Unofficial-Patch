@@ -804,7 +804,7 @@ switch type_event
                 checkMissile = buffer_read(_buffer, buffer_u8)
                 checkDamage = buffer_read(_buffer, buffer_u8)
                 checkFreeze = buffer_read(_buffer, buffer_u8)
-                checkDir = buffer_read(_buffer, buffer_u8)
+                checkDir = buffer_read(_buffer, buffer_s16)
                 tempSocket = -100
                 for (i = 0; i < ds_list_size(idList); i++)
                 {
