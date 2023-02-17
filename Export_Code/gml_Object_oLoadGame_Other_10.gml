@@ -14,4 +14,4 @@ global.absorbDone = 0
 if (global.newgame == 1)
     start_new_game()
 else
-    load_game(((working_directory + "\multitroid\save") + string((global.saveslot + 1))))
+    load_game(((working_directory + "/multitroid/save") + string((global.saveslot + 1))))

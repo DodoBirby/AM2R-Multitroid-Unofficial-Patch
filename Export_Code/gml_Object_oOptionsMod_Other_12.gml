@@ -211,7 +211,7 @@ switch global.saxmode
         break
 }
 
-ini_open((working_directory + "\multitroid\mod_settings.ini"))
+ini_open((working_directory + "/multitroid/mod_settings.ini"))
 ini_write_string("ModSettings", "ipaddress", ip)
 ini_write_real("ModSettings", "port", real(port))
 ini_write_string("ModSettings", "displayname", name)

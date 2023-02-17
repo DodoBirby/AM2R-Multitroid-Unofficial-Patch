@@ -1,6 +1,6 @@
 var type, nameLength, size, alignment, i;
 network_set_config(0, 5000)
-strict_init((working_directory + "\multitroid\dictionary.json"))
+strict_init((working_directory + "/multitroid/dictionary.json"))
 queenHealthResetQueued = 0
 canSend = 0
 metroidCountChanged = 0
@@ -51,7 +51,7 @@ seed = undefined
 type = buffer_fixed
 syncedDifficulty = global.difficulty
 elm = oControl.mod_monstersextremecheck
-ini_open((working_directory + "\multitroid\mod_settings.ini"))
+ini_open((working_directory + "/multitroid/mod_settings.ini"))
 ipaddress = ini_read_string("ModSettings", "ipaddress", "127.0.0.1")
 name = ini_read_string("ModSettings", "displayname", "name")
 port = ini_read_real("ModSettings", "port", 64198)
@@ -63,7 +63,7 @@ nameLength = string_length(name)
 if (nameLength > 15)
 {
     name = string_copy(name, 1, 15)
-    ini_open((working_directory + "\multitroid\mod_settings.ini"))
+    ini_open((working_directory + "/multitroid/mod_settings.ini"))
     ini_write_string("ModSettings", "displayname", name)
     ini_close()
 }

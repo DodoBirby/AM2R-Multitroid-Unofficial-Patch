@@ -7,7 +7,7 @@ if (ID == msg && global.curropt == num_ip)
         input = ds_map_find_value(async_load, "result")
         if is_string(input)
         {
-            ini_open((working_directory + "\multitroid\settings.ini"))
+            ini_open((working_directory + "/multitroid/settings.ini"))
             ini_write_string("Settings", "ipaddress", input)
             ini_close()
             ip = input
@@ -26,7 +26,7 @@ if (ID == msg && global.curropt == num_port)
         input = ds_map_find_value(async_load, "value")
         if is_real(input)
         {
-            ini_open((working_directory + "\multitroid\settings.ini"))
+            ini_open((working_directory + "/multitroid/settings.ini"))
             ini_write_real("Settings", "port", input)
             ini_close()
             port = string(input)
@@ -44,7 +44,7 @@ if (ID == msg && global.curropt == num_name)
         input = ds_map_find_value(async_load, "result")
         if is_string(input)
         {
-            ini_open((working_directory + "\multitroid\settings.ini"))
+            ini_open((working_directory + "/multitroid/settings.ini"))
             ini_write_string("Settings", "name", input)
             ini_close()
             name = input

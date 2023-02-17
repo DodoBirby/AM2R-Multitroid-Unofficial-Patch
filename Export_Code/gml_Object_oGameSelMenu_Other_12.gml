@@ -6,7 +6,7 @@ ptanks = global.ptanks
 j = 0
 repeat (3)
 {
-    filename = ((working_directory + "\multitroid\save") + string((j + 1)))
+    filename = ((working_directory + "/multitroid/save") + string((j + 1)))
     if file_exists(filename)
     {
         detail = sv6_load_details(filename)
