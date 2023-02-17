@@ -1,4 +1,4 @@
-var spr, f, arrPos, arrPosID, arrPosRoom, i, arrDraw, arrID, arrX, arrY, jump_vel, splash;
+var spr, f, arrPos, arrPosID, arrPosRoom, i, arrDraw, arrID, arrX, arrY, jump_vel, splash, time1, time2;
 if global.enablecontrol
     chStepControl()
 if global.movingobj
@@ -720,10 +720,12 @@ if platformCharacterIs(IN_AIR)
     }
     if (yVel < 0 && state == AIRBALL)
     {
+        time1 = statetime < 2
+        time2 = statetime < 4
         if (isCollisionUpRight() == 1 && kRight == 0)
-            x -= ((1 + statetime) < (2 + statetime)) < 4
+            x -= ((1 + time1) + time2)
         if (isCollisionUpLeft() == 1 && kLeft == 0)
-            x += ((1 + statetime) < (2 + statetime)) < 4
+            x += ((1 + time1) + time2)
     }
     if (vjump == 0 && dash == 0 && state != AIRBALL)
     {
