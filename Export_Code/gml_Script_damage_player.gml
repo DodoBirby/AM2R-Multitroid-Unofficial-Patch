@@ -12,14 +12,14 @@ if global.multiDamageCollision
     }
     if global.sax
     {
-        global.damageMult = (1 + (1.5 * (metcount / 41)))
+        global.damageMult = (1 + (1.5 * (metcount / global.MetCount)))
+        if (global.damageMult > 2.5)
+            global.damageMult = 2.5
         if (global.currentsuit == 2 && global.juggActive)
             global.ignoreKnockback = 1
     }
 }
 experimentalExtraSAXDamageMultiplier = 1
-if global.experimental
-    experimentalExtraSAXDamageMultiplier = 1.25
 damage_taken = 0
 if (global.currentsuit == 0 || argument3 == 1)
 {
