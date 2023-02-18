@@ -6,3 +6,6 @@ The goal of this project is to continue updating multitroid (primarily the SAX m
 This mod is created using [Undertale Mod Tool](https://github.com/krzys-h/UndertaleModTool) (UTMT)
 To use this repo download a release and patch it as per a normal AM2R mod, then use UTMT + [these](https://github.com/krzys-h/UndertaleModTool/pull/815) scripts
 to import/export rooms and objects.
+
+## Linux Server
+32-Bit archticture is required for the Linux Server Appimage.
