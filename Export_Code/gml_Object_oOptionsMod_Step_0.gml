@@ -140,7 +140,7 @@ if active
         key = keyboard_check_pressed(vk_return)
     else
         key = oControl.kMenu1 > 0
-    if ((key && oControl.kMenu1PushedSteps == 0) || (os_type != os_android && keyBegin && oControl.kMenu1PushedSteps == 0 && (!editing)))
+       if ((key || (os_type != os_android && ((keyBegin && (!editing)) || (editing && (joystick_check_button(global.opjoyid, global.opjoybtn_menu1) || gamepad_button_check(global.gamepadIndex, global.opxjoybtn_menu1)))))) && oControl.kMenu1PushedSteps == 0)
     {
         if (global.curropt == num_ip && os_type != os_android)
         {
