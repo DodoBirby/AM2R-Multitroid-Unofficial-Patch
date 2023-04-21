@@ -184,6 +184,14 @@ else
         draw_set_halign(fa_left)
     }
 }
+if (global.saxmode && (!global.lobbyLocked))
+{
+    text = "Waiting for host to lock lobby..."
+    draw_set_font(global.fontGUI2)
+    draw_set_halign(fa_center)
+    draw_cool_text((view_xview[0] + 160), (view_yview[0] + 220), text, c_black, c_white, c_white, image_alpha)
+    draw_set_halign(fa_left)
+}
 if ((!global.sax) && global.spectator && global.ingame)
 {
     text = "Jump to swap players"
